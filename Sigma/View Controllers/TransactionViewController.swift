@@ -12,10 +12,15 @@ import UIKit
 class TransactionViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     @IBOutlet weak var topBar: UIView!
+    @IBOutlet weak var scanButton: UserTypeButton!
     @IBOutlet weak var userIdentifierLabel: UILabel!
+    @IBOutlet weak var confirmButton: UserTypeButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        scanButton.type = .scan
+        confirmButton.type = .confirm
     }
     
     override func viewDidLayoutSubviews() {
@@ -27,6 +32,10 @@ class TransactionViewController: UIViewController, UIImagePickerControllerDelega
         topBar.layer.shadowOffset = CGSize(width: 0, height: 1)
         topBar.layer.shadowOpacity = 0.15
         topBar.layer.shadowPath = topShadowPath.cgPath
+    }
+    
+    @IBAction func backButton(_ sender: UIButton) {
+        navigationController?.popViewController(animated: true)
     }
     
     @IBAction func scanButton(_ sender: UIButton) {

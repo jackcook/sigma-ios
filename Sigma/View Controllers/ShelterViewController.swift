@@ -72,6 +72,8 @@ class ShelterViewController: UIViewController, SigmaTabBarDelegate, UITableViewD
     // MARK: UITableViewDelegate
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        
         performSegue(withIdentifier: "transactionSegue", sender: self)
     }
 }
