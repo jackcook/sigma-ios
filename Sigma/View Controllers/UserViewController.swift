@@ -8,7 +8,7 @@
 
 import UIKit
 
-class UserViewController: UIViewController, SigmaTabBarDelegate {
+class UserViewController: UIViewController, MapViewDelegate, SigmaTabBarDelegate {
     
     @IBOutlet weak var topBar: UIView!
     @IBOutlet weak var contentView: UIView!
@@ -47,6 +47,7 @@ class UserViewController: UIViewController, SigmaTabBarDelegate {
         }
         
         contentView.addSubview(mapView)
+        mapView.delegate = self
         mapView.frame = contentView.bounds
         self.mapView = mapView
     }
@@ -69,7 +70,13 @@ class UserViewController: UIViewController, SigmaTabBarDelegate {
         bottomBar.layer.shadowPath = bottomShadowPath.cgPath
     }
     
-    // MARK: Sigma Tab Bar Delegate
+    // MARK: MapViewDelegate Methods
+    
+    func shouldDisplayInformation(for shelter: Shelter) {
+        performSegue(withIdentifier: "placeSegue", sender: self)
+    }
+    
+    // MARK: SigmaTabBarDelegate Methods
     
     func updatedSelectedTab(_ index: Int) {
         guard mapView != nil, profileView != nil else {
