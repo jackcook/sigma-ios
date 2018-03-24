@@ -1,5 +1,5 @@
 //
-//  MainViewController.swift
+//  UserViewController.swift
 //  Sigma
 //
 //  Created by Annie on 3/23/18.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MainViewController: UIViewController, SigmaTabBarDelegate {
+class UserViewController: UIViewController, SigmaTabBarDelegate {
     
     @IBOutlet weak var topBar: UIView!
     @IBOutlet weak var contentView: UIView!

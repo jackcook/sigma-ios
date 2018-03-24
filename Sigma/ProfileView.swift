@@ -16,7 +16,11 @@ class ProfileView: UIView {
     override func awakeFromNib() {
         super.awakeFromNib()
         
-        if let tryImage = EFQRCode.generate(content: "a") {
+        guard let address = SigmaUserDefaults.string(forKey: .userIdentifier) else {
+            return
+        }
+        
+        if let tryImage = EFQRCode.generate(content: address) {
             imageView.image = UIImage(cgImage: tryImage)
         }
     }
