@@ -22,6 +22,12 @@
 		EB90CC7820666D1400A0BFE9 /* TransactionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB90CC7720666D1400A0BFE9 /* TransactionViewController.swift */; };
 		EB90CC802066A65300A0BFE9 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB90CC7F2066A65300A0BFE9 /* MapView.swift */; };
 		EB90CC822066A66100A0BFE9 /* MapView.xib in Resources */ = {isa = PBXBuildFile; fileRef = EB90CC812066A66100A0BFE9 /* MapView.xib */; };
+		EB90CC8A2066B30400A0BFE9 /* SigmaRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB90CC892066B30400A0BFE9 /* SigmaRequest.swift */; };
+		EB90CC8C2066B45C00A0BFE9 /* SheltersRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB90CC8B2066B45C00A0BFE9 /* SheltersRequest.swift */; };
+		EB90CC8F2066B51400A0BFE9 /* Shelter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB90CC8E2066B51400A0BFE9 /* Shelter.swift */; };
+		EB90CC912066B85600A0BFE9 /* CreateUserRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB90CC902066B85600A0BFE9 /* CreateUserRequest.swift */; };
+		EB90CC932066B8F900A0BFE9 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB90CC922066B8F900A0BFE9 /* User.swift */; };
+		EB90CC952066B92C00A0BFE9 /* Transaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB90CC942066B92C00A0BFE9 /* Transaction.swift */; };
 		EBCA9AB5206616E500896BBA /* SigmaUserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBCA9AB4206616E500896BBA /* SigmaUserDefaults.swift */; };
 		EBCA9AB72066246800896BBA /* SigmaUserDefaultsKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBCA9AB62066246800896BBA /* SigmaUserDefaultsKey.swift */; };
 		EBCA9AB9206628A300896BBA /* UserTypeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBCA9AB8206628A300896BBA /* UserTypeViewController.swift */; };
@@ -46,6 +52,12 @@
 		EB90CC7720666D1400A0BFE9 /* TransactionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionViewController.swift; sourceTree = "<group>"; };
 		EB90CC7F2066A65300A0BFE9 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 		EB90CC812066A66100A0BFE9 /* MapView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MapView.xib; sourceTree = "<group>"; };
+		EB90CC892066B30400A0BFE9 /* SigmaRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SigmaRequest.swift; sourceTree = "<group>"; };
+		EB90CC8B2066B45C00A0BFE9 /* SheltersRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SheltersRequest.swift; sourceTree = "<group>"; };
+		EB90CC8E2066B51400A0BFE9 /* Shelter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shelter.swift; sourceTree = "<group>"; };
+		EB90CC902066B85600A0BFE9 /* CreateUserRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateUserRequest.swift; sourceTree = "<group>"; };
+		EB90CC922066B8F900A0BFE9 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		EB90CC942066B92C00A0BFE9 /* Transaction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transaction.swift; sourceTree = "<group>"; };
 		EBCA9AB4206616E500896BBA /* SigmaUserDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SigmaUserDefaults.swift; sourceTree = "<group>"; };
 		EBCA9AB62066246800896BBA /* SigmaUserDefaultsKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SigmaUserDefaultsKey.swift; sourceTree = "<group>"; };
 		EBCA9AB8206628A300896BBA /* UserTypeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTypeViewController.swift; sourceTree = "<group>"; };
@@ -106,6 +118,7 @@
 			children = (
 				EB90CC862066AFF600A0BFE9 /* Application */,
 				EB90CC852066AFE300A0BFE9 /* Common */,
+				EB90CC8D2066B4F500A0BFE9 /* Models */,
 				EB90CC842066AFD200A0BFE9 /* Views */,
 				EB90CC832066AFC300A0BFE9 /* View Controllers */,
 				D1CE0E032065EC58005DE5BF /* Assets.xcassets */,
@@ -142,8 +155,8 @@
 		EB90CC852066AFE300A0BFE9 /* Common */ = {
 			isa = PBXGroup;
 			children = (
-				EBCA9AB4206616E500896BBA /* SigmaUserDefaults.swift */,
-				EBCA9AB62066246800896BBA /* SigmaUserDefaultsKey.swift */,
+				EB90CC882066B2F900A0BFE9 /* Networking */,
+				EB90CC872066B2F200A0BFE9 /* Settings */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -157,6 +170,35 @@
 				D1CE0E002065EC58005DE5BF /* Main.storyboard */,
 			);
 			path = Application;
+			sourceTree = "<group>";
+		};
+		EB90CC872066B2F200A0BFE9 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				EBCA9AB4206616E500896BBA /* SigmaUserDefaults.swift */,
+				EBCA9AB62066246800896BBA /* SigmaUserDefaultsKey.swift */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		EB90CC882066B2F900A0BFE9 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				EB90CC892066B30400A0BFE9 /* SigmaRequest.swift */,
+				EB90CC8B2066B45C00A0BFE9 /* SheltersRequest.swift */,
+				EB90CC902066B85600A0BFE9 /* CreateUserRequest.swift */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		EB90CC8D2066B4F500A0BFE9 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				EB90CC8E2066B51400A0BFE9 /* Shelter.swift */,
+				EB90CC942066B92C00A0BFE9 /* Transaction.swift */,
+				EB90CC922066B8F900A0BFE9 /* User.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -273,11 +315,13 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Sigma/Pods-Sigma-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/EFQRCode/EFQRCode.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/EFQRCode.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 			);
@@ -297,15 +341,21 @@
 				EB3FAA9220660A6B006033FF /* SigmaTabBar.swift in Sources */,
 				EBCA9ABB20662A0F00896BBA /* UserTypeButton.swift in Sources */,
 				EB90CC7620666B1000A0BFE9 /* ItemCell.swift in Sources */,
+				EB90CC8C2066B45C00A0BFE9 /* SheltersRequest.swift in Sources */,
 				EB90CC802066A65300A0BFE9 /* MapView.swift in Sources */,
 				EB3FAA9420660F04006033FF /* ProfileView.swift in Sources */,
 				D1CE0DFF2065EC58005DE5BF /* UserViewController.swift in Sources */,
 				EBCA9AB72066246800896BBA /* SigmaUserDefaultsKey.swift in Sources */,
 				EB90CC7820666D1400A0BFE9 /* TransactionViewController.swift in Sources */,
 				EBCA9AB5206616E500896BBA /* SigmaUserDefaults.swift in Sources */,
+				EB90CC952066B92C00A0BFE9 /* Transaction.swift in Sources */,
 				D1CE0DFD2065EC58005DE5BF /* AppDelegate.swift in Sources */,
 				EB90CC74206640BB00A0BFE9 /* ShelterViewController.swift in Sources */,
 				EBCA9AB9206628A300896BBA /* UserTypeViewController.swift in Sources */,
+				EB90CC932066B8F900A0BFE9 /* User.swift in Sources */,
+				EB90CC912066B85600A0BFE9 /* CreateUserRequest.swift in Sources */,
+				EB90CC8A2066B30400A0BFE9 /* SigmaRequest.swift in Sources */,
+				EB90CC8F2066B51400A0BFE9 /* Shelter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

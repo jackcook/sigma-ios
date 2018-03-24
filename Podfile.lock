@@ -1,15 +1,18 @@
 PODS:
+  - Alamofire (4.7.0)
   - EFQRCode (4.2.1)
   - SwiftyJSON (4.0.0)
 
 DEPENDENCIES:
+  - Alamofire (~> 4.7)
   - EFQRCode (~> 4.2)
   - SwiftyJSON (~> 4.0)
 
 SPEC CHECKSUMS:
+  Alamofire: 907e0a98eb68cdb7f9d1f541a563d6ac5dc77b25
   EFQRCode: f3fd67049faa07adb575495c05d72a34e407a940
   SwiftyJSON: 070dabdcb1beb81b247c65ffa3a79dbbfb3b48aa
 
-PODFILE CHECKSUM: 759ced2199b8bcef84566fe61eee5ace1b99c521
+PODFILE CHECKSUM: a1c20ecfbb03f1dea217d13863f6a5f0115887c6
 
 COCOAPODS: 1.4.0
