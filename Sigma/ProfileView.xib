@@ -18,7 +18,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Globe" translatesAutoresizingMaskIntoConstraints="NO" id="r83-kP-ARG">
-                    <rect key="frame" x="48" y="68" width="279" height="279"/>
+                    <rect key="frame" x="64" y="52" width="247" height="247"/>
                     <constraints>
                         <constraint firstAttribute="width" secondItem="r83-kP-ARG" secondAttribute="height" multiplier="1:1" id="I2f-Rz-T0y"/>
                     </constraints>
@@ -26,11 +26,14 @@
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="r83-kP-ARG" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="48" id="Jaf-ZX-Rbv"/>
-                <constraint firstItem="r83-kP-ARG" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="48" id="K4E-9q-FjC"/>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="r83-kP-ARG" secondAttribute="trailing" constant="48" id="hg1-2x-aJ7"/>
+                <constraint firstItem="r83-kP-ARG" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="32" id="Jaf-ZX-Rbv"/>
+                <constraint firstItem="r83-kP-ARG" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="64" id="K4E-9q-FjC"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="r83-kP-ARG" secondAttribute="trailing" constant="64" id="hg1-2x-aJ7"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <connections>
+                <outlet property="imageView" destination="r83-kP-ARG" id="cxx-44-lyD"/>
+            </connections>
         </view>
     </objects>
     <resources>

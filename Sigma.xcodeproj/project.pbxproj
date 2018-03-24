@@ -12,13 +12,17 @@
 		D1CE0E022065EC58005DE5BF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D1CE0E002065EC58005DE5BF /* Main.storyboard */; };
 		D1CE0E042065EC58005DE5BF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D1CE0E032065EC58005DE5BF /* Assets.xcassets */; };
 		D1CE0E072065EC58005DE5BF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D1CE0E052065EC58005DE5BF /* LaunchScreen.storyboard */; };
+		E249986CBE279AB8C50014DD /* Pods_Sigma.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F747BBE028344E137CC5294C /* Pods_Sigma.framework */; };
 		EB3FAA9020660A2C006033FF /* SigmaTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB3FAA8F20660A2C006033FF /* SigmaTabView.swift */; };
 		EB3FAA9220660A6B006033FF /* SigmaTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB3FAA9120660A6B006033FF /* SigmaTabBar.swift */; };
 		EB3FAA9420660F04006033FF /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB3FAA9320660F04006033FF /* ProfileView.swift */; };
 		EB3FAA9620660F18006033FF /* ProfileView.xib in Resources */ = {isa = PBXBuildFile; fileRef = EB3FAA9520660F18006033FF /* ProfileView.xib */; };
+		EBCA9AB5206616E500896BBA /* SigmaUserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBCA9AB4206616E500896BBA /* SigmaUserDefaults.swift */; };
+		EBCA9AB72066246800896BBA /* SigmaUserDefaultsKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBCA9AB62066246800896BBA /* SigmaUserDefaultsKey.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		29B0A8EA261E564E65BE8800 /* Pods-Sigma.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Sigma.release.xcconfig"; path = "Pods/Target Support Files/Pods-Sigma/Pods-Sigma.release.xcconfig"; sourceTree = "<group>"; };
 		D1CE0DF92065EC58005DE5BF /* Sigma.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Sigma.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D1CE0DFC2065EC58005DE5BF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D1CE0DFE2065EC58005DE5BF /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -30,6 +34,10 @@
 		EB3FAA9120660A6B006033FF /* SigmaTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SigmaTabBar.swift; sourceTree = "<group>"; };
 		EB3FAA9320660F04006033FF /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		EB3FAA9520660F18006033FF /* ProfileView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileView.xib; sourceTree = "<group>"; };
+		EBCA9AB4206616E500896BBA /* SigmaUserDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SigmaUserDefaults.swift; sourceTree = "<group>"; };
+		EBCA9AB62066246800896BBA /* SigmaUserDefaultsKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SigmaUserDefaultsKey.swift; sourceTree = "<group>"; };
+		EF8805AA98F18B477CE04EE3 /* Pods-Sigma.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Sigma.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Sigma/Pods-Sigma.debug.xcconfig"; sourceTree = "<group>"; };
+		F747BBE028344E137CC5294C /* Pods_Sigma.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Sigma.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -37,17 +45,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E249986CBE279AB8C50014DD /* Pods_Sigma.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0EE136560A9E0CEF22253631 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F747BBE028344E137CC5294C /* Pods_Sigma.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		206634359FA1C19BB1EF6E49 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				EF8805AA98F18B477CE04EE3 /* Pods-Sigma.debug.xcconfig */,
+				29B0A8EA261E564E65BE8800 /* Pods-Sigma.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		D1CE0DF02065EC58005DE5BF = {
 			isa = PBXGroup;
 			children = (
 				D1CE0DFB2065EC58005DE5BF /* Sigma */,
 				D1CE0DFA2065EC58005DE5BF /* Products */,
+				206634359FA1C19BB1EF6E49 /* Pods */,
+				0EE136560A9E0CEF22253631 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -68,6 +96,8 @@
 				EB3FAA9120660A6B006033FF /* SigmaTabBar.swift */,
 				EB3FAA9320660F04006033FF /* ProfileView.swift */,
 				EB3FAA9520660F18006033FF /* ProfileView.xib */,
+				EBCA9AB4206616E500896BBA /* SigmaUserDefaults.swift */,
+				EBCA9AB62066246800896BBA /* SigmaUserDefaultsKey.swift */,
 				D1CE0E002065EC58005DE5BF /* Main.storyboard */,
 				D1CE0E032065EC58005DE5BF /* Assets.xcassets */,
 				D1CE0E052065EC58005DE5BF /* LaunchScreen.storyboard */,
@@ -83,9 +113,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D1CE0E0B2065EC58005DE5BF /* Build configuration list for PBXNativeTarget "Sigma" */;
 			buildPhases = (
+				472D41FE1A623F707B95C112 /* [CP] Check Pods Manifest.lock */,
 				D1CE0DF52065EC58005DE5BF /* Sources */,
 				D1CE0DF62065EC58005DE5BF /* Frameworks */,
 				D1CE0DF72065EC58005DE5BF /* Resources */,
+				5B7DDF1EBF8F70CE427FE647 /* [CP] Embed Pods Frameworks */,
+				4C326A6270284C6C5F88A1CF /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -144,6 +177,60 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		472D41FE1A623F707B95C112 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Sigma-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		4C326A6270284C6C5F88A1CF /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Sigma/Pods-Sigma-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5B7DDF1EBF8F70CE427FE647 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Sigma/Pods-Sigma-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/EFQRCode/EFQRCode.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/EFQRCode.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Sigma/Pods-Sigma-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		D1CE0DF52065EC58005DE5BF /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -153,6 +240,8 @@
 				EB3FAA9220660A6B006033FF /* SigmaTabBar.swift in Sources */,
 				EB3FAA9420660F04006033FF /* ProfileView.swift in Sources */,
 				D1CE0DFF2065EC58005DE5BF /* MainViewController.swift in Sources */,
+				EBCA9AB72066246800896BBA /* SigmaUserDefaultsKey.swift in Sources */,
+				EBCA9AB5206616E500896BBA /* SigmaUserDefaults.swift in Sources */,
 				D1CE0DFD2065EC58005DE5BF /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -274,6 +363,7 @@
 		};
 		D1CE0E0C2065EC58005DE5BF /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = EF8805AA98F18B477CE04EE3 /* Pods-Sigma.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Sigma/Info.plist;
@@ -286,6 +376,7 @@
 		};
 		D1CE0E0D2065EC58005DE5BF /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 29B0A8EA261E564E65BE8800 /* Pods-Sigma.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Sigma/Info.plist;
