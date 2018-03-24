@@ -24,7 +24,7 @@ class UserTypeViewController: UIViewController {
     @IBAction func signInButton(_ sender: UIButton) {
         let session = URLSession(configuration: .default)
         
-        guard let url = URL(string: "http://35.174.76.87:8000/users") else {
+        guard let url = URL(string: "http://sigma.us-east-1.elasticbeanstalk.com/users") else {
             return
         }
         
