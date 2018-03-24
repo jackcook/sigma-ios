@@ -13,6 +13,9 @@ class UserViewController: UIViewController, SigmaTabBarDelegate {
     @IBOutlet weak var topBar: UIView!
     @IBOutlet weak var contentView: UIView!
     @IBOutlet weak var bottomBar: SigmaTabBar!
+    
+    private var mapView: MapView!
+    private var profileView: ProfileView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,6 +40,15 @@ class UserViewController: UIViewController, SigmaTabBarDelegate {
         
         contentView.addSubview(profileView)
         profileView.frame = contentView.bounds
+        self.profileView = profileView
+        
+        guard let mapView = Bundle.main.loadNibNamed("MapView", owner: self, options: nil)?.first as? MapView else {
+            return
+        }
+        
+        contentView.addSubview(mapView)
+        mapView.frame = contentView.bounds
+        self.mapView = mapView
     }
     
     override func viewDidLayoutSubviews() {
@@ -60,6 +72,22 @@ class UserViewController: UIViewController, SigmaTabBarDelegate {
     // MARK: Sigma Tab Bar Delegate
     
     func updatedSelectedTab(_ index: Int) {
-        print(index)
+        guard mapView != nil, profileView != nil else {
+            return
+        }
+        
+        mapView.isUserInteractionEnabled = false
+        profileView.isUserInteractionEnabled = false
+        
+        switch index {
+        case 1:
+            mapView.isUserInteractionEnabled = true
+            contentView.bringSubview(toFront: mapView)
+        case 2:
+            profileView.isUserInteractionEnabled = true
+            contentView.bringSubview(toFront: profileView)
+        default:
+            break
+        }
     }
 }

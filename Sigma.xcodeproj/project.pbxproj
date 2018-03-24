@@ -20,6 +20,8 @@
 		EB90CC74206640BB00A0BFE9 /* ShelterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB90CC73206640BB00A0BFE9 /* ShelterViewController.swift */; };
 		EB90CC7620666B1000A0BFE9 /* ItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB90CC7520666B1000A0BFE9 /* ItemCell.swift */; };
 		EB90CC7820666D1400A0BFE9 /* TransactionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB90CC7720666D1400A0BFE9 /* TransactionViewController.swift */; };
+		EB90CC802066A65300A0BFE9 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB90CC7F2066A65300A0BFE9 /* MapView.swift */; };
+		EB90CC822066A66100A0BFE9 /* MapView.xib in Resources */ = {isa = PBXBuildFile; fileRef = EB90CC812066A66100A0BFE9 /* MapView.xib */; };
 		EBCA9AB5206616E500896BBA /* SigmaUserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBCA9AB4206616E500896BBA /* SigmaUserDefaults.swift */; };
 		EBCA9AB72066246800896BBA /* SigmaUserDefaultsKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBCA9AB62066246800896BBA /* SigmaUserDefaultsKey.swift */; };
 		EBCA9AB9206628A300896BBA /* UserTypeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBCA9AB8206628A300896BBA /* UserTypeViewController.swift */; };
@@ -42,6 +44,8 @@
 		EB90CC73206640BB00A0BFE9 /* ShelterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShelterViewController.swift; sourceTree = "<group>"; };
 		EB90CC7520666B1000A0BFE9 /* ItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemCell.swift; sourceTree = "<group>"; };
 		EB90CC7720666D1400A0BFE9 /* TransactionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionViewController.swift; sourceTree = "<group>"; };
+		EB90CC7F2066A65300A0BFE9 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
+		EB90CC812066A66100A0BFE9 /* MapView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MapView.xib; sourceTree = "<group>"; };
 		EBCA9AB4206616E500896BBA /* SigmaUserDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SigmaUserDefaults.swift; sourceTree = "<group>"; };
 		EBCA9AB62066246800896BBA /* SigmaUserDefaultsKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SigmaUserDefaultsKey.swift; sourceTree = "<group>"; };
 		EBCA9AB8206628A300896BBA /* UserTypeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTypeViewController.swift; sourceTree = "<group>"; };
@@ -102,6 +106,8 @@
 			children = (
 				D1CE0DFC2065EC58005DE5BF /* AppDelegate.swift */,
 				D1CE0DFE2065EC58005DE5BF /* UserViewController.swift */,
+				EB90CC7F2066A65300A0BFE9 /* MapView.swift */,
+				EB90CC812066A66100A0BFE9 /* MapView.xib */,
 				EB90CC73206640BB00A0BFE9 /* ShelterViewController.swift */,
 				EB3FAA8F20660A2C006033FF /* SigmaTabView.swift */,
 				EBCA9AB8206628A300896BBA /* UserTypeViewController.swift */,
@@ -188,6 +194,7 @@
 				D1CE0E072065EC58005DE5BF /* LaunchScreen.storyboard in Resources */,
 				D1CE0E042065EC58005DE5BF /* Assets.xcassets in Resources */,
 				D1CE0E022065EC58005DE5BF /* Main.storyboard in Resources */,
+				EB90CC822066A66100A0BFE9 /* MapView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -258,6 +265,7 @@
 				EB3FAA9220660A6B006033FF /* SigmaTabBar.swift in Sources */,
 				EBCA9ABB20662A0F00896BBA /* UserTypeButton.swift in Sources */,
 				EB90CC7620666B1000A0BFE9 /* ItemCell.swift in Sources */,
+				EB90CC802066A65300A0BFE9 /* MapView.swift in Sources */,
 				EB3FAA9420660F04006033FF /* ProfileView.swift in Sources */,
 				D1CE0DFF2065EC58005DE5BF /* UserViewController.swift in Sources */,
 				EBCA9AB72066246800896BBA /* SigmaUserDefaultsKey.swift in Sources */,
