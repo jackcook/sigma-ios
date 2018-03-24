@@ -13,9 +13,9 @@ final class CreateUserRequest: SigmaRequest {
     
     typealias Value = User
     
-    var body: [String: AnyObject] {
+    var body: Parameters {
         return [
-            "name": name as AnyObject
+            "name": name
         ]
     }
     
