@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -72,13 +73,56 @@
                     <connections>
                         <outlet property="registerShelterButton" destination="kKR-O4-tpO" id="hnR-IY-tr7"/>
                         <outlet property="signInButton" destination="H7e-SH-8hc" id="mOh-yz-3bd"/>
-                        <segue destination="BYZ-38-t0r" kind="show" identifier="userSegue" id="4P1-Zt-Zlc"/>
                         <segue destination="0fE-7H-V7H" kind="show" identifier="shelterSegue" id="h3c-yg-IcO"/>
+                        <segue destination="NWD-6d-qau" kind="show" identifier="userSegue" id="UPc-q6-uwX"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AlG-Gt-n37" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-135" y="133"/>
+        </scene>
+        <!--New User View Controller-->
+        <scene sceneID="kjF-ik-SeQ">
+            <objects>
+                <viewController id="NWD-6d-qau" customClass="NewUserViewController" customModule="Sigma" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="haa-KL-Fva"/>
+                        <viewControllerLayoutGuide type="bottom" id="jdi-om-5bR"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Em5-sF-Q3j">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="What's your name?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hbO-FB-nfT">
+                                <rect key="frame" x="114" y="148" width="147" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="John Smith" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="W8P-8M-Dy5">
+                                <rect key="frame" x="47" y="201" width="281" height="20"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="done"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="W8P-8M-Dy5" firstAttribute="top" secondItem="hbO-FB-nfT" secondAttribute="bottom" constant="32" id="WZ9-IZ-GxQ"/>
+                            <constraint firstItem="hbO-FB-nfT" firstAttribute="top" secondItem="haa-KL-Fva" secondAttribute="bottom" constant="128" id="oQQ-If-VgA"/>
+                            <constraint firstItem="W8P-8M-Dy5" firstAttribute="centerX" secondItem="Em5-sF-Q3j" secondAttribute="centerX" id="s5k-9c-EbL"/>
+                            <constraint firstItem="W8P-8M-Dy5" firstAttribute="width" secondItem="Em5-sF-Q3j" secondAttribute="width" multiplier="0.75" id="sIv-7q-V2H"/>
+                            <constraint firstItem="hbO-FB-nfT" firstAttribute="centerX" secondItem="Em5-sF-Q3j" secondAttribute="centerX" id="tMG-zD-HVq"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="textField" destination="W8P-8M-Dy5" id="Nb7-T6-qKs"/>
+                        <segue destination="BYZ-38-t0r" kind="show" identifier="homeSegue" id="DDE-KS-X97"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hSS-qW-pEh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="862" y="-268"/>
         </scene>
         <!--User View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -144,7 +188,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="863" y="-240"/>
+            <point key="canvasLocation" x="1730" y="-269"/>
         </scene>
         <!--Shelter View Controller-->
         <scene sceneID="ns0-uV-cAo">
@@ -307,7 +351,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IWv-VR-qIJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1895" y="133"/>
+            <point key="canvasLocation" x="1729" y="528"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Aye-1A-zYq">

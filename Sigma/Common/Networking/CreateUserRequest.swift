@@ -13,8 +13,24 @@ final class CreateUserRequest: SigmaRequest {
     
     typealias Value = User
     
+    var body: Parameters {
+        return [
+            "name": name
+        ]
+    }
+    
     var endpoint: String {
         return "/users"
+    }
+    
+    var method: HTTPMethod {
+        return .post
+    }
+    
+    private let name: String
+    
+    init(name: String) {
+        self.name = name
     }
     
     func handleRequest(_ json: JSON?, _ completion: @escaping (User?) -> Void) {

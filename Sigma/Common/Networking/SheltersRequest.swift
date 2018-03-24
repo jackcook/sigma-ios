@@ -13,8 +13,16 @@ final class SheltersRequest: SigmaRequest {
     
     typealias Value = [Shelter]
     
+    var body: Parameters {
+        return [:]
+    }
+    
     var endpoint: String {
         return "/shelters"
+    }
+    
+    var method: HTTPMethod {
+        return .get
     }
     
     func handleRequest(_ json: JSON?, _ completion: @escaping ([Shelter]?) -> Void) {
