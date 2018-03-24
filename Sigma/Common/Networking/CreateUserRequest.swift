@@ -17,6 +17,10 @@ final class CreateUserRequest: SigmaRequest {
         return "/users"
     }
     
+    var method: HTTPMethod {
+        return .post
+    }
+    
     func handleRequest(_ json: JSON?, _ completion: @escaping (User?) -> Void) {
         guard let userData = json else {
             completion(nil)

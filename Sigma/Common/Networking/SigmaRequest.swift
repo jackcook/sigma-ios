@@ -12,6 +12,7 @@ import SwiftyJSON
 protocol SigmaRequest {
     associatedtype Value
     var endpoint: String { get }
+    var method: HTTPMethod { get }
     func handleRequest(_ json: JSON?, _ completion: @escaping (Value?) -> Void)
 }
 
@@ -22,7 +23,7 @@ extension SigmaRequest {
     }
     
     func start(completion: @escaping (Value?) -> Void) {
-        Alamofire.request("\(baseURL)\(endpoint)").responseJSON { response in
+        Alamofire.request("\(baseURL)\(endpoint)", method: method, parameters: nil).responseJSON { response in
             guard let data = response.result.value else {
                 return
             }

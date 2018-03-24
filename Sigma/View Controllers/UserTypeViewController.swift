@@ -22,34 +22,14 @@ class UserTypeViewController: UIViewController {
     }
     
     @IBAction func signInButton(_ sender: UIButton) {
-        let session = URLSession(configuration: .default)
-        
-        guard let url = URL(string: "http://sigma.us-east-1.elasticbeanstalk.com/users") else {
-            return
-        }
-        
-        var request = URLRequest(url: url)
-        request.httpMethod = "POST"
-        
-        let task = session.dataTask(with: request) { data, response, error in
-            guard let data = data else {
+        CreateUserRequest().start { user in
+            guard let user = user else {
                 return
             }
             
-            let json = JSON(data)
-            
-            guard let address = json["transactions"].array?[0]["recipient"].string else {
-                return
-            }
-            
-            SigmaUserDefaults.set(address, forKey: .userIdentifier)
-            
-            DispatchQueue.main.async {
-                self.performSegue(withIdentifier: "userSegue", sender: self)
-            }
+            SigmaUserDefaults.set(user.id, forKey: .userIdentifier)
+            self.performSegue(withIdentifier: "userSegue", sender: self)
         }
-        
-        task.resume()
     }
     
     @IBAction func registerButton(_ sender: UIButton) {

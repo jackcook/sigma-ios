@@ -17,6 +17,10 @@ final class SheltersRequest: SigmaRequest {
         return "/shelters"
     }
     
+    var method: HTTPMethod {
+        return .get
+    }
+    
     func handleRequest(_ json: JSON?, _ completion: @escaping ([Shelter]?) -> Void) {
         guard let sheltersData = json?.array else {
             completion(nil)
