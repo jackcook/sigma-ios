@@ -29,6 +29,7 @@ class MapView: UIView, CLLocationManagerDelegate {
                 let pin = MKPointAnnotation()
                 let location = CLLocationCoordinate2DMake(shelter.latitude, shelter.longitude)
                 pin.title = shelter.address
+//              pin.subtitle = shelter.hours
                 pin.coordinate = location
                 
                 self.mapView.addAnnotation(pin)
@@ -41,7 +42,6 @@ class MapView: UIView, CLLocationManagerDelegate {
         
         if CLLocationManager.locationServicesEnabled(){
             locationManager.delegate = self
-//            locationManager.desiredAccuracy = CLLocationAccuracy
             locationManager.startUpdatingLocation()
         } else{
             return
@@ -51,7 +51,7 @@ class MapView: UIView, CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         let location = locations[0]
         let center = location.coordinate
-        let span = MKCoordinateSpanMake(0.05, 0.05)
+        let span = MKCoordinateSpanMake(0.03, 0.03)
         let region = MKCoordinateRegionMake(center, span)
         
         mapView.setRegion(region, animated: true)
