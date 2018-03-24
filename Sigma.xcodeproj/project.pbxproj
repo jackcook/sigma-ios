@@ -8,20 +8,28 @@
 
 /* Begin PBXBuildFile section */
 		D1CE0DFD2065EC58005DE5BF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1CE0DFC2065EC58005DE5BF /* AppDelegate.swift */; };
-		D1CE0DFF2065EC58005DE5BF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1CE0DFE2065EC58005DE5BF /* ViewController.swift */; };
+		D1CE0DFF2065EC58005DE5BF /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1CE0DFE2065EC58005DE5BF /* MainViewController.swift */; };
 		D1CE0E022065EC58005DE5BF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D1CE0E002065EC58005DE5BF /* Main.storyboard */; };
 		D1CE0E042065EC58005DE5BF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D1CE0E032065EC58005DE5BF /* Assets.xcassets */; };
 		D1CE0E072065EC58005DE5BF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D1CE0E052065EC58005DE5BF /* LaunchScreen.storyboard */; };
+		EB3FAA9020660A2C006033FF /* SigmaTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB3FAA8F20660A2C006033FF /* SigmaTabView.swift */; };
+		EB3FAA9220660A6B006033FF /* SigmaTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB3FAA9120660A6B006033FF /* SigmaTabBar.swift */; };
+		EB3FAA9420660F04006033FF /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB3FAA9320660F04006033FF /* ProfileView.swift */; };
+		EB3FAA9620660F18006033FF /* ProfileView.xib in Resources */ = {isa = PBXBuildFile; fileRef = EB3FAA9520660F18006033FF /* ProfileView.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		D1CE0DF92065EC58005DE5BF /* Sigma.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Sigma.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D1CE0DFC2065EC58005DE5BF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		D1CE0DFE2065EC58005DE5BF /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		D1CE0DFE2065EC58005DE5BF /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		D1CE0E012065EC58005DE5BF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D1CE0E032065EC58005DE5BF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D1CE0E062065EC58005DE5BF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D1CE0E082065EC58005DE5BF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EB3FAA8F20660A2C006033FF /* SigmaTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SigmaTabView.swift; sourceTree = "<group>"; };
+		EB3FAA9120660A6B006033FF /* SigmaTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SigmaTabBar.swift; sourceTree = "<group>"; };
+		EB3FAA9320660F04006033FF /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		EB3FAA9520660F18006033FF /* ProfileView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileView.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,7 +63,11 @@
 			isa = PBXGroup;
 			children = (
 				D1CE0DFC2065EC58005DE5BF /* AppDelegate.swift */,
-				D1CE0DFE2065EC58005DE5BF /* ViewController.swift */,
+				D1CE0DFE2065EC58005DE5BF /* MainViewController.swift */,
+				EB3FAA8F20660A2C006033FF /* SigmaTabView.swift */,
+				EB3FAA9120660A6B006033FF /* SigmaTabBar.swift */,
+				EB3FAA9320660F04006033FF /* ProfileView.swift */,
+				EB3FAA9520660F18006033FF /* ProfileView.xib */,
 				D1CE0E002065EC58005DE5BF /* Main.storyboard */,
 				D1CE0E032065EC58005DE5BF /* Assets.xcassets */,
 				D1CE0E052065EC58005DE5BF /* LaunchScreen.storyboard */,
@@ -123,6 +135,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EB3FAA9620660F18006033FF /* ProfileView.xib in Resources */,
 				D1CE0E072065EC58005DE5BF /* LaunchScreen.storyboard in Resources */,
 				D1CE0E042065EC58005DE5BF /* Assets.xcassets in Resources */,
 				D1CE0E022065EC58005DE5BF /* Main.storyboard in Resources */,
@@ -136,7 +149,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D1CE0DFF2065EC58005DE5BF /* ViewController.swift in Sources */,
+				EB3FAA9020660A2C006033FF /* SigmaTabView.swift in Sources */,
+				EB3FAA9220660A6B006033FF /* SigmaTabBar.swift in Sources */,
+				EB3FAA9420660F04006033FF /* ProfileView.swift in Sources */,
+				D1CE0DFF2065EC58005DE5BF /* MainViewController.swift in Sources */,
 				D1CE0DFD2065EC58005DE5BF /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -299,6 +315,7 @@
 				D1CE0E0D2065EC58005DE5BF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
