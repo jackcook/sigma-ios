@@ -13,8 +13,8 @@ final class SheltersRequest: SigmaRequest {
     
     typealias Value = [Shelter]
     
-    var body: Parameters {
-        return [:]
+    var body: Parameters? {
+        return nil
     }
     
     var endpoint: String {

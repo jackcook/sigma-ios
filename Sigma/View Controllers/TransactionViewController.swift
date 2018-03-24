@@ -14,13 +14,20 @@ class TransactionViewController: UIViewController, UIImagePickerControllerDelega
     @IBOutlet weak var topBar: UIView!
     @IBOutlet weak var scanButton: UserTypeButton!
     @IBOutlet weak var userIdentifierLabel: UILabel!
+    @IBOutlet weak var amountLabel: UILabel!
     @IBOutlet weak var confirmButton: UserTypeButton!
+    
+    private var senderIdentifier: String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         scanButton.type = .scan
         confirmButton.type = .confirm
+        
+        userIdentifierLabel.alpha = 0
+        amountLabel.alpha = 0
+        confirmButton.alpha = 0
     }
     
     override func viewDidLayoutSubviews() {
@@ -47,6 +54,16 @@ class TransactionViewController: UIViewController, UIImagePickerControllerDelega
         present(pickerController, animated: true, completion: nil)
     }
     
+    @IBAction func confirmButton(_ sender: UIButton) {
+        guard let id = senderIdentifier else {
+            return
+        }
+        
+        PaymentRequest(sender: id, amount: 10).start { transaction in
+            self.navigationController?.popViewController(animated: true)
+        }
+    }
+    
     // MARK: UIImagePickerControllerDelegate
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
@@ -56,13 +73,24 @@ class TransactionViewController: UIViewController, UIImagePickerControllerDelega
             return
         }
         
-        guard let cgImage = image.cgImage, let tryCodes = EFQRCode.recognize(image: cgImage) else {
+        guard let cgImage = image.cgImage, let senderId = EFQRCode.recognize(image: cgImage)?.first else {
             return
         }
         
-        for (index, code) in tryCodes.enumerated() {
-            print("The content of \(index) QR Code is: \(code)")
-            userIdentifierLabel.text = code
+        senderIdentifier = senderId
+        
+        UserRequest(id: senderId).start { user in
+            guard let user = user else {
+                return
+            }
+            
+            self.userIdentifierLabel.text = "Recipient: \(user.name)"
+            
+            UIView.animate(withDuration: 0.25) {
+                self.userIdentifierLabel.alpha = 1
+                self.amountLabel.alpha = 1
+                self.confirmButton.alpha = 1
+            }
         }
     }
 }

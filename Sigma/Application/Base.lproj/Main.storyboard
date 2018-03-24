@@ -24,13 +24,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="σ" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bMf-5e-toa">
-                                <rect key="frame" x="144" y="207.5" width="88.5" height="172"/>
+                                <rect key="frame" x="144" y="175.5" width="88.5" height="172"/>
                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="144"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your new digital identity" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="duz-Zu-lGj">
-                                <rect key="frame" x="93.5" y="379.5" width="188" height="21"/>
+                                <rect key="frame" x="93.5" y="347.5" width="188" height="21"/>
                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -59,7 +59,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="H7e-SH-8hc" firstAttribute="leading" secondItem="ZiX-JT-2ZC" secondAttribute="leading" constant="32" id="21w-fI-SxJ"/>
-                            <constraint firstItem="bMf-5e-toa" firstAttribute="centerY" secondItem="ZiX-JT-2ZC" secondAttribute="centerY" constant="-40" id="Fl2-ih-M0V"/>
+                            <constraint firstItem="bMf-5e-toa" firstAttribute="centerY" secondItem="ZiX-JT-2ZC" secondAttribute="centerY" constant="-72" id="Fl2-ih-M0V"/>
                             <constraint firstItem="kKR-O4-tpO" firstAttribute="leading" secondItem="ZiX-JT-2ZC" secondAttribute="leading" constant="32" id="Gbm-O2-rL2"/>
                             <constraint firstItem="bMf-5e-toa" firstAttribute="centerX" secondItem="ZiX-JT-2ZC" secondAttribute="centerX" id="LMN-89-tEU"/>
                             <constraint firstAttribute="trailing" secondItem="kKR-O4-tpO" secondAttribute="trailing" constant="32" id="PA0-P0-CqC"/>
@@ -373,6 +373,9 @@
                                     <constraint firstAttribute="height" constant="48" id="YN3-h0-HQu"/>
                                 </constraints>
                                 <state key="normal" title="Confirm"/>
+                                <connections>
+                                    <action selector="confirmButton:" destination="nr1-pQ-j8z" eventType="touchUpInside" id="3EP-gg-jPP"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -397,6 +400,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="amountLabel" destination="izn-YG-KID" id="4ub-I0-oGm"/>
                         <outlet property="confirmButton" destination="4PA-tU-k3b" id="78a-0w-fZ3"/>
                         <outlet property="scanButton" destination="3tN-aS-OLS" id="lCb-kp-i7S"/>
                         <outlet property="topBar" destination="oks-qm-V4c" id="nIf-0z-mIM"/>

@@ -1,5 +1,5 @@
 //
-//  CreateUserRequest.swift
+//  UserRequest.swift
 //  Sigma
 //
 //  Created by Jack Cook on 3/24/18.
@@ -9,32 +9,30 @@
 import Alamofire
 import SwiftyJSON
 
-final class CreateUserRequest: SigmaRequest {
+final class UserRequest: SigmaRequest {
     
     typealias Value = User
     
     var body: Parameters? {
-        return [
-            "name": name
-        ]
+        return nil
     }
     
     var endpoint: String {
-        return "/users"
+        return "/users/\(id)"
     }
     
     var method: HTTPMethod {
-        return .post
+        return .get
     }
     
-    private let name: String
+    private let id: String
     
-    init(name: String) {
-        self.name = name
+    init(id: String) {
+        self.id = id
     }
     
     func handleRequest(_ json: JSON?, _ completion: @escaping (User?) -> Void) {
-        guard let userData = json?["transactions"][0] else {
+        guard let userData = json else {
             completion(nil)
             return
         }

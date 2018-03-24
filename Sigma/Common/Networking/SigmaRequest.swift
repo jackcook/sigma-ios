@@ -11,7 +11,7 @@ import SwiftyJSON
 
 protocol SigmaRequest {
     associatedtype Value
-    var body: Parameters { get }
+    var body: Parameters? { get }
     var endpoint: String { get }
     var method: HTTPMethod { get }
     func handleRequest(_ json: JSON?, _ completion: @escaping (Value?) -> Void)

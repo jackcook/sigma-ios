@@ -11,10 +11,15 @@ import SwiftyJSON
 struct User {
     
     let id: String
+    let name: String
     let balance: Int
     let transactions: [Transaction]
     
     init(json: JSON) {
+        id = json["user_id"].string ?? ""
+        name = json["name"].string ?? ""
+        balance = json["balance"].int ?? 0
+        
         if let transactionsData = json["transactions"].array {
             var transactions = [Transaction]()
             
@@ -27,19 +32,5 @@ struct User {
         } else {
             self.transactions = [Transaction]()
         }
-        
-        id = transactions.first?.recipient ?? ""
-        
-        var balance = 0
-        
-        for transaction in transactions {
-            if transaction.recipient == id {
-                balance += transaction.amount
-            } else if transaction.sender == id {
-                balance -= transaction.amount
-            }
-        }
-        
-        self.balance = balance
     }
 }
