@@ -104,27 +104,59 @@
 		D1CE0DFB2065EC58005DE5BF /* Sigma */ = {
 			isa = PBXGroup;
 			children = (
-				D1CE0DFC2065EC58005DE5BF /* AppDelegate.swift */,
+				EB90CC862066AFF600A0BFE9 /* Application */,
+				EB90CC852066AFE300A0BFE9 /* Common */,
+				EB90CC842066AFD200A0BFE9 /* Views */,
+				EB90CC832066AFC300A0BFE9 /* View Controllers */,
+				D1CE0E032065EC58005DE5BF /* Assets.xcassets */,
+			);
+			path = Sigma;
+			sourceTree = "<group>";
+		};
+		EB90CC832066AFC300A0BFE9 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
 				D1CE0DFE2065EC58005DE5BF /* UserViewController.swift */,
+				EB90CC73206640BB00A0BFE9 /* ShelterViewController.swift */,
+				EBCA9AB8206628A300896BBA /* UserTypeViewController.swift */,
+				EB90CC7720666D1400A0BFE9 /* TransactionViewController.swift */,
+			);
+			path = "View Controllers";
+			sourceTree = "<group>";
+		};
+		EB90CC842066AFD200A0BFE9 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				EB90CC7520666B1000A0BFE9 /* ItemCell.swift */,
 				EB90CC7F2066A65300A0BFE9 /* MapView.swift */,
 				EB90CC812066A66100A0BFE9 /* MapView.xib */,
-				EB90CC73206640BB00A0BFE9 /* ShelterViewController.swift */,
 				EB3FAA8F20660A2C006033FF /* SigmaTabView.swift */,
-				EBCA9AB8206628A300896BBA /* UserTypeViewController.swift */,
 				EB3FAA9120660A6B006033FF /* SigmaTabBar.swift */,
 				EB3FAA9320660F04006033FF /* ProfileView.swift */,
 				EB3FAA9520660F18006033FF /* ProfileView.xib */,
+				EBCA9ABA20662A0F00896BBA /* UserTypeButton.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		EB90CC852066AFE300A0BFE9 /* Common */ = {
+			isa = PBXGroup;
+			children = (
 				EBCA9AB4206616E500896BBA /* SigmaUserDefaults.swift */,
 				EBCA9AB62066246800896BBA /* SigmaUserDefaultsKey.swift */,
-				EBCA9ABA20662A0F00896BBA /* UserTypeButton.swift */,
-				EB90CC7520666B1000A0BFE9 /* ItemCell.swift */,
-				EB90CC7720666D1400A0BFE9 /* TransactionViewController.swift */,
-				D1CE0E002065EC58005DE5BF /* Main.storyboard */,
-				D1CE0E032065EC58005DE5BF /* Assets.xcassets */,
-				D1CE0E052065EC58005DE5BF /* LaunchScreen.storyboard */,
-				D1CE0E082065EC58005DE5BF /* Info.plist */,
 			);
-			path = Sigma;
+			path = Common;
+			sourceTree = "<group>";
+		};
+		EB90CC862066AFF600A0BFE9 /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				D1CE0DFC2065EC58005DE5BF /* AppDelegate.swift */,
+				D1CE0E082065EC58005DE5BF /* Info.plist */,
+				D1CE0E052065EC58005DE5BF /* LaunchScreen.storyboard */,
+				D1CE0E002065EC58005DE5BF /* Main.storyboard */,
+			);
+			path = Application;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -398,7 +430,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 59PUM5CV3T;
-				INFOPLIST_FILE = Sigma/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/Sigma/Application/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = io.sigma.Sigma;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -412,7 +444,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 59PUM5CV3T;
-				INFOPLIST_FILE = Sigma/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/Sigma/Application/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = io.sigma.Sigma;
 				PRODUCT_NAME = "$(TARGET_NAME)";
