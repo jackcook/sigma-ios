@@ -13,6 +13,10 @@ final class SheltersRequest: SigmaRequest {
     
     typealias Value = [Shelter]
     
+    var body: [String: AnyObject] {
+        return [String: AnyObject]()
+    }
+    
     var endpoint: String {
         return "/shelters"
     }

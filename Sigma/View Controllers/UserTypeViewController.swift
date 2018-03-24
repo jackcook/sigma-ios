@@ -22,14 +22,7 @@ class UserTypeViewController: UIViewController {
     }
     
     @IBAction func signInButton(_ sender: UIButton) {
-        CreateUserRequest().start { user in
-            guard let user = user else {
-                return
-            }
-            
-            SigmaUserDefaults.set(user.id, forKey: .userIdentifier)
-            self.performSegue(withIdentifier: "userSegue", sender: self)
-        }
+        performSegue(withIdentifier: "userSegue", sender: self)
     }
     
     @IBAction func registerButton(_ sender: UIButton) {
