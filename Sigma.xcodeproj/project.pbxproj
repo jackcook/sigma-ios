@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D1B5C9E1206757BF0075CE54 /* ShelterDataCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1B5C9E0206757BF0075CE54 /* ShelterDataCell.swift */; };
 		D1CE0DFD2065EC58005DE5BF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1CE0DFC2065EC58005DE5BF /* AppDelegate.swift */; };
 		D1CE0DFF2065EC58005DE5BF /* UserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1CE0DFE2065EC58005DE5BF /* UserViewController.swift */; };
 		D1CE0E022065EC58005DE5BF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D1CE0E002065EC58005DE5BF /* Main.storyboard */; };
@@ -44,6 +45,7 @@
 
 /* Begin PBXFileReference section */
 		29B0A8EA261E564E65BE8800 /* Pods-Sigma.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Sigma.release.xcconfig"; path = "Pods/Target Support Files/Pods-Sigma/Pods-Sigma.release.xcconfig"; sourceTree = "<group>"; };
+		D1B5C9E0206757BF0075CE54 /* ShelterDataCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShelterDataCell.swift; sourceTree = "<group>"; };
 		D1CE0DF92065EC58005DE5BF /* Sigma.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Sigma.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D1CE0DFC2065EC58005DE5BF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D1CE0DFE2065EC58005DE5BF /* UserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewController.swift; sourceTree = "<group>"; };
@@ -160,6 +162,7 @@
 			isa = PBXGroup;
 			children = (
 				EB90CC7520666B1000A0BFE9 /* ItemCell.swift */,
+				D1B5C9E0206757BF0075CE54 /* ShelterDataCell.swift */,
 				EB90CC7F2066A65300A0BFE9 /* MapView.swift */,
 				EB90CC812066A66100A0BFE9 /* MapView.xib */,
 				EB3FAA8F20660A2C006033FF /* SigmaTabView.swift */,
@@ -260,7 +263,6 @@
 				TargetAttributes = {
 					D1CE0DF82065EC58005DE5BF = {
 						CreatedOnToolsVersion = 8.3.3;
-						DevelopmentTeam = 59PUM5CV3T;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -372,6 +374,7 @@
 				EB90CC8C2066B45C00A0BFE9 /* SheltersRequest.swift in Sources */,
 				EB90CC802066A65300A0BFE9 /* MapView.swift in Sources */,
 				EB3FAA9420660F04006033FF /* ProfileView.swift in Sources */,
+				D1B5C9E1206757BF0075CE54 /* ShelterDataCell.swift in Sources */,
 				D1CE0DFF2065EC58005DE5BF /* UserViewController.swift in Sources */,
 				EBCA9AB72066246800896BBA /* SigmaUserDefaultsKey.swift in Sources */,
 				EB90CC992066DD7100A0BFE9 /* ScanButton.swift in Sources */,
@@ -511,11 +514,14 @@
 			baseConfigurationReference = EF8805AA98F18B477CE04EE3 /* Pods-Sigma.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 59PUM5CV3T;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = "$(SRCROOT)/Sigma/Application/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = io.sigma.Sigma;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -525,11 +531,14 @@
 			baseConfigurationReference = 29B0A8EA261E564E65BE8800 /* Pods-Sigma.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 59PUM5CV3T;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = "$(SRCROOT)/Sigma/Application/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = io.sigma.Sigma;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
