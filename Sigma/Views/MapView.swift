@@ -38,7 +38,7 @@ class MapView: UIView, MKMapViewDelegate {
                 let pin = MKPointAnnotation()
                 
                 pin.coordinate = CLLocationCoordinate2DMake(shelter.latitude, shelter.longitude)
-                pin.title = shelter.address
+                pin.title = shelter.name
 //              pin.subtitle = shelter.hours
                 
                 self.mapView.addAnnotation(pin)
@@ -66,7 +66,7 @@ class MapView: UIView, MKMapViewDelegate {
             }
         }
         
-        let shelter = shelters[0]
+        let shelter = shelters[index]
         delegate?.shouldDisplayInformation(for: shelter)
     }
 }

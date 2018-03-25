@@ -16,13 +16,18 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="O8v-UC-5Je">
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="O8v-UC-5Je">
                     <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                 </tableView>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="O8v-UC-5Je" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="1h9-an-kiV"/>
+                <constraint firstItem="O8v-UC-5Je" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="r6O-AU-lpk"/>
+                <constraint firstItem="O8v-UC-5Je" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="rVc-tL-lYl"/>
+                <constraint firstItem="O8v-UC-5Je" firstAttribute="bottom" secondItem="vUN-kp-3ea" secondAttribute="bottom" id="scw-W1-rtp"/>
+            </constraints>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <connections>
                 <outlet property="updatesTableView" destination="O8v-UC-5Je" id="Mpw-0d-5RH"/>

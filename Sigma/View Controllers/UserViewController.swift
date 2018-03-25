@@ -19,6 +19,8 @@ class UserViewController: UIViewController, MapViewDelegate, ProfileViewDelegate
     private var updatesView: UpdatesView?
     private var mapView: MapView?
     private var profileView: ProfileView?
+    
+    private var shelterToSend: Shelter?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -86,9 +88,20 @@ class UserViewController: UIViewController, MapViewDelegate, ProfileViewDelegate
         bottomBar.layer.shadowPath = bottomShadowPath.cgPath
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "placeSegue" {
+            guard let placeController = segue.destination as? PlaceViewController, let shelter = shelterToSend else {
+                return
+            }
+            
+            placeController.shelter = shelter
+        }
+    }
+    
     // MARK: MapViewDelegate Methods
     
     func shouldDisplayInformation(for shelter: Shelter) {
+        shelterToSend = shelter
         performSegue(withIdentifier: "placeSegue", sender: self)
     }
     
