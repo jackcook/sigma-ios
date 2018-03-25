@@ -19,8 +19,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             SigmaUserDefaults.setDefaultValues()
         }
         
-        if SigmaUserDefaults.string(forKey: .userIdentifier) != nil {
-            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        
+        if SigmaUserDefaults.bool(forKey: .isShelterVolunteer) {
+            let controller = storyboard.instantiateViewController(withIdentifier: "ShelterViewController")
+            window?.rootViewController = controller
+        } else if SigmaUserDefaults.string(forKey: .userIdentifier) != nil {
             let controller = storyboard.instantiateViewController(withIdentifier: "UserViewController")
             window?.rootViewController = controller
         }

@@ -22,10 +22,12 @@ class UserTypeViewController: UIViewController {
     }
     
     @IBAction func signInButton(_ sender: UIButton) {
+        SigmaUserDefaults.set(false, forKey: .isShelterVolunteer)
         performSegue(withIdentifier: "userSegue", sender: self)
     }
     
     @IBAction func registerButton(_ sender: UIButton) {
+        SigmaUserDefaults.set(true, forKey: .isShelterVolunteer)
         performSegue(withIdentifier: "shelterSegue", sender: self)
     }
 }

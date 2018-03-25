@@ -13,4 +13,5 @@ enum SigmaUserDefaultsKey: String {
     // User settings
     case sendAnonymousUsageData
     case userIdentifier
+    case isShelterVolunteer
 }
