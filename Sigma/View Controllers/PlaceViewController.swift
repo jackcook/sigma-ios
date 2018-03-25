@@ -13,10 +13,12 @@ private struct Section {
     var description: String
 }
 
-class PlaceViewController: UIViewController, UITableViewDataSource, UITableViewDelegate{
+class PlaceViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     @IBOutlet weak var topBar: UIView!
     @IBOutlet weak var contentTableView: UITableView!
+    
+    var shelter: Shelter!
     
     private let dataSource = [
         Section(title: "Open Hours", description: "24/7"),
@@ -56,6 +58,7 @@ class PlaceViewController: UIViewController, UITableViewDataSource, UITableViewD
                 return UITableViewCell()
             }
             
+            cell.configure(shelter: shelter)
             return cell
         default:
             guard let cell = tableView.dequeueReusableCell(withIdentifier: "DataCell", for: indexPath) as? ShelterDataCell else {

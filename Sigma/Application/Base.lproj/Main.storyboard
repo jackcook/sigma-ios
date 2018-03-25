@@ -217,37 +217,40 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Park Vista HS" translatesAutoresizingMaskIntoConstraints="NO" id="4Ww-Vq-5vC">
-                                                    <rect key="frame" x="15" y="14" width="96" height="96"/>
+                                                    <rect key="frame" x="24" y="12" width="100" height="100"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="4Ww-Vq-5vC" secondAttribute="height" multiplier="1:1" id="0Jb-zB-1iH"/>
-                                                        <constraint firstAttribute="width" constant="96" id="OK9-2D-g7x"/>
                                                     </constraints>
                                                 </imageView>
-                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="eAf-vU-jEZ">
-                                                    <rect key="frame" x="119" y="11" width="241" height="102"/>
-                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                    <string key="text">Park Vista Community High School
-Public High School 
-7900 Jog Rd, Lake Worth, FL 33467 
-(561) 491-8400
-</string>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                                    <dataDetectorType key="dataDetectorTypes" phoneNumber="YES" address="YES"/>
-                                                </textView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="This is the name of a high school" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CFb-Qb-GGx">
+                                                    <rect key="frame" x="140" y="22" width="211" height="48"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="20"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7hF-N3-dwD">
+                                                    <rect key="frame" x="140" y="78" width="211" height="18"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="eAf-vU-jEZ" firstAttribute="top" secondItem="Xdh-U0-YAe" secondAttribute="topMargin" id="1v3-bg-BON"/>
-                                                <constraint firstItem="4Ww-Vq-5vC" firstAttribute="centerY" secondItem="Xdh-U0-YAe" secondAttribute="centerY" id="6Sf-iE-02N"/>
-                                                <constraint firstItem="eAf-vU-jEZ" firstAttribute="trailing" secondItem="Xdh-U0-YAe" secondAttribute="trailingMargin" id="6Xg-e9-hGD"/>
-                                                <constraint firstAttribute="bottomMargin" secondItem="eAf-vU-jEZ" secondAttribute="bottom" id="IBC-Tx-Ftc"/>
-                                                <constraint firstItem="4Ww-Vq-5vC" firstAttribute="leading" secondItem="Xdh-U0-YAe" secondAttribute="leadingMargin" id="aZj-iQ-GpI"/>
-                                                <constraint firstItem="eAf-vU-jEZ" firstAttribute="leading" secondItem="4Ww-Vq-5vC" secondAttribute="trailing" constant="8" id="iNd-wq-K2t"/>
+                                                <constraint firstAttribute="trailing" secondItem="CFb-Qb-GGx" secondAttribute="trailing" constant="24" id="Qgy-Vh-rBm"/>
+                                                <constraint firstAttribute="bottom" secondItem="4Ww-Vq-5vC" secondAttribute="bottom" constant="12" id="ZLh-Fk-z3K"/>
+                                                <constraint firstItem="4Ww-Vq-5vC" firstAttribute="leading" secondItem="Xdh-U0-YAe" secondAttribute="leading" constant="24" id="aXV-NO-hQ5"/>
+                                                <constraint firstItem="4Ww-Vq-5vC" firstAttribute="top" secondItem="Xdh-U0-YAe" secondAttribute="top" constant="12" id="bM2-dT-gkh"/>
+                                                <constraint firstItem="CFb-Qb-GGx" firstAttribute="leading" secondItem="4Ww-Vq-5vC" secondAttribute="trailing" constant="16" id="lUO-mf-nYS"/>
+                                                <constraint firstItem="7hF-N3-dwD" firstAttribute="top" secondItem="CFb-Qb-GGx" secondAttribute="bottom" constant="8" id="sQW-XF-HJ3"/>
+                                                <constraint firstItem="7hF-N3-dwD" firstAttribute="leading" secondItem="4Ww-Vq-5vC" secondAttribute="trailing" constant="16" id="u4Z-lk-PE6"/>
+                                                <constraint firstItem="CFb-Qb-GGx" firstAttribute="top" secondItem="4Ww-Vq-5vC" secondAttribute="top" constant="10" id="yLn-op-CT0"/>
+                                                <constraint firstAttribute="trailing" secondItem="7hF-N3-dwD" secondAttribute="trailing" constant="24" id="yhN-6L-nZc"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="addressLabel" destination="7hF-N3-dwD" id="3Rw-KC-asS"/>
                                             <outlet property="iconView" destination="4Ww-Vq-5vC" id="Q3I-fB-iET"/>
-                                            <outlet property="infoView" destination="eAf-vU-jEZ" id="ht8-ZU-ewC"/>
+                                            <outlet property="nameLabel" destination="CFb-Qb-GGx" id="RQE-Vv-bGF"/>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="DataCell" rowHeight="110" id="Hjf-1C-ibf" customClass="ShelterDataCell" customModule="Sigma" customModuleProvider="target">

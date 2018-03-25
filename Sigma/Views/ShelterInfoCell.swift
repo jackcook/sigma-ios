@@ -11,6 +11,12 @@ import UIKit
 class ShelterInfoCell: UITableViewCell {
     
     @IBOutlet weak var iconView: UIImageView!
-    @IBOutlet weak var infoView: UIView!
+    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var addressLabel: UILabel!
+    
+    func configure(shelter: Shelter) {
+        nameLabel.text = shelter.name
+        addressLabel.text = shelter.address
+    }
 }
 
