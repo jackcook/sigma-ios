@@ -15,6 +15,6 @@ class ItemCell: UITableViewCell {
     
     func configure(name: String, cost: Int) {
         nameLabel.text = name
-        costLabel.text = "\(cost) ¢"
+        costLabel.text = "\(cost)σ"
     }
 }

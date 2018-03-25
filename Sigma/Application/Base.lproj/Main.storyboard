@@ -684,20 +684,14 @@ Public High School
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="March 24, 2018, 3:55 PM" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pOm-RD-QH3">
-                                <rect key="frame" x="90.5" y="134" width="193" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="5 Sigma Coins" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="izn-YG-KID">
-                                <rect key="frame" x="132.5" y="285" width="110" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="5 Sigma coins" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pOm-RD-QH3">
+                                <rect key="frame" x="133.5" y="134" width="108" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4PA-tU-k3b" customClass="UserTypeButton" customModule="Sigma" customModuleProvider="target">
-                                <rect key="frame" x="94" y="330" width="187.5" height="48"/>
+                                <rect key="frame" x="94" y="299" width="187.5" height="48"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="48" id="YN3-h0-HQu"/>
                                 </constraints>
@@ -711,7 +705,6 @@ Public High School
                         <constraints>
                             <constraint firstItem="4PA-tU-k3b" firstAttribute="width" secondItem="CkX-qA-9Bh" secondAttribute="width" multiplier="0.5" id="0bd-mU-zHu"/>
                             <constraint firstItem="cEe-gD-pFV" firstAttribute="centerX" secondItem="CkX-qA-9Bh" secondAttribute="centerX" id="6KC-O3-CNB"/>
-                            <constraint firstItem="izn-YG-KID" firstAttribute="top" secondItem="QpJ-Yp-zqg" secondAttribute="bottom" constant="10" id="9K8-5j-47i"/>
                             <constraint firstItem="QpJ-Yp-zqg" firstAttribute="top" secondItem="3tN-aS-OLS" secondAttribute="bottom" constant="24" id="B1b-dh-o5z"/>
                             <constraint firstItem="pOm-RD-QH3" firstAttribute="top" secondItem="cEe-gD-pFV" secondAttribute="bottom" constant="10" id="C7W-wQ-2G3"/>
                             <constraint firstItem="3tN-aS-OLS" firstAttribute="centerX" secondItem="CkX-qA-9Bh" secondAttribute="centerX" id="EGV-oe-a9S"/>
@@ -719,18 +712,18 @@ Public High School
                             <constraint firstItem="pOm-RD-QH3" firstAttribute="centerX" secondItem="CkX-qA-9Bh" secondAttribute="centerX" id="FB9-Pc-vP5"/>
                             <constraint firstItem="oks-qm-V4c" firstAttribute="top" secondItem="CkX-qA-9Bh" secondAttribute="top" id="GWw-1e-yi4"/>
                             <constraint firstItem="4PA-tU-k3b" firstAttribute="centerX" secondItem="CkX-qA-9Bh" secondAttribute="centerX" id="JW9-dT-S9h"/>
-                            <constraint firstItem="izn-YG-KID" firstAttribute="centerX" secondItem="CkX-qA-9Bh" secondAttribute="centerX" id="LTl-ye-K5r"/>
                             <constraint firstAttribute="trailing" secondItem="oks-qm-V4c" secondAttribute="trailing" id="Ox1-zW-Ypp"/>
                             <constraint firstItem="cEe-gD-pFV" firstAttribute="top" secondItem="oks-qm-V4c" secondAttribute="bottom" constant="24" id="XiA-sG-D35"/>
                             <constraint firstItem="QpJ-Yp-zqg" firstAttribute="centerX" secondItem="CkX-qA-9Bh" secondAttribute="centerX" id="k6a-2e-yOc"/>
                             <constraint firstItem="3tN-aS-OLS" firstAttribute="top" secondItem="pOm-RD-QH3" secondAttribute="bottom" constant="24" id="tKh-RU-wg5"/>
-                            <constraint firstItem="4PA-tU-k3b" firstAttribute="top" secondItem="izn-YG-KID" secondAttribute="bottom" constant="24" id="toU-TV-hDt"/>
                             <constraint firstItem="oks-qm-V4c" firstAttribute="leading" secondItem="CkX-qA-9Bh" secondAttribute="leading" id="uaJ-IG-9HP"/>
+                            <constraint firstItem="4PA-tU-k3b" firstAttribute="top" secondItem="QpJ-Yp-zqg" secondAttribute="bottom" constant="24" id="zet-Bz-cvu"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="amountLabel" destination="izn-YG-KID" id="4ub-I0-oGm"/>
+                        <outlet property="amountLabel" destination="pOm-RD-QH3" id="2f2-JF-dt9"/>
                         <outlet property="confirmButton" destination="4PA-tU-k3b" id="78a-0w-fZ3"/>
+                        <outlet property="nameLabel" destination="cEe-gD-pFV" id="XUP-AD-F3g"/>
                         <outlet property="scanButton" destination="3tN-aS-OLS" id="lCb-kp-i7S"/>
                         <outlet property="topBar" destination="oks-qm-V4c" id="nIf-0z-mIM"/>
                         <outlet property="userIdentifierLabel" destination="QpJ-Yp-zqg" id="lk8-La-Vsf"/>
@@ -769,6 +762,7 @@ Public High School
                                         <state key="normal" image="Back"/>
                                         <connections>
                                             <action selector="backButton:" destination="nr1-pQ-j8z" eventType="touchUpInside" id="EHV-Qi-uiV"/>
+                                            <action selector="backButton:" destination="XN8-kg-OYB" eventType="touchUpInside" id="dXW-cx-EYY"/>
                                         </connections>
                                     </button>
                                 </subviews>

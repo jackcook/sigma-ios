@@ -12,10 +12,14 @@ import UIKit
 class TransactionViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     @IBOutlet weak var topBar: UIView!
+    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var amountLabel: UILabel!
     @IBOutlet weak var scanButton: UserTypeButton!
     @IBOutlet weak var userIdentifierLabel: UILabel!
-    @IBOutlet weak var amountLabel: UILabel!
     @IBOutlet weak var confirmButton: UserTypeButton!
+    
+    var consumable: Consumable?
+    var task: Task?
     
     private var senderIdentifier: String?
     
@@ -26,8 +30,15 @@ class TransactionViewController: UIViewController, UIImagePickerControllerDelega
         confirmButton.type = .confirm
         
         userIdentifierLabel.alpha = 0
-        amountLabel.alpha = 0
         confirmButton.alpha = 0
+        
+        if let consumable = consumable {
+            nameLabel.text = consumable.name
+            amountLabel.text = "\(consumable.cost) Sigma Coins"
+        } else if let task = task {
+            nameLabel.text = task.name
+            amountLabel.text = "\(task.value) Sigma Coins"
+        }
     }
     
     override func viewDidLayoutSubviews() {
@@ -59,8 +70,14 @@ class TransactionViewController: UIViewController, UIImagePickerControllerDelega
             return
         }
         
-        PaymentRequest(sender: id, amount: 10).start { transaction in
-            self.navigationController?.popViewController(animated: true)
+        if let consumable = consumable {
+            PaymentRequest(sender: id, amount: consumable.cost).start { transaction in
+                self.navigationController?.popViewController(animated: true)
+            }
+        } else if let task = task {
+            RewardRequest(recipient: id, amount: task.value).start { transaction in
+                self.navigationController?.popViewController(animated: true)
+            }
         }
     }
     
@@ -84,11 +101,14 @@ class TransactionViewController: UIViewController, UIImagePickerControllerDelega
                 return
             }
             
-            self.userIdentifierLabel.text = "Recipient: \(user.name)"
+            if let _ = self.consumable {
+                self.userIdentifierLabel.text = "From: \(user.name)"
+            } else {
+                self.userIdentifierLabel.text = "Recipient: \(user.name)"
+            }
             
             UIView.animate(withDuration: 0.25) {
                 self.userIdentifierLabel.alpha = 1
-                self.amountLabel.alpha = 1
                 self.confirmButton.alpha = 1
             }
         }
