@@ -205,33 +205,27 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="SfC-gf-QDL">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="SfC-gf-QDL">
                                 <rect key="frame" x="0.0" y="68" width="375" height="599"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ShelterInfoCell" rowHeight="124" id="fj5-OD-H4t" customClass="ItemCell" customModule="Sigma" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ShelterInfoCell" rowHeight="124" id="fj5-OD-H4t" customClass="ShelterInfoCell" customModule="Sigma" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="124"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="fj5-OD-H4t" id="Xdh-U0-YAe">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="123.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="124"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Park Vista HS" translatesAutoresizingMaskIntoConstraints="NO" id="4Ww-Vq-5vC">
-                                                    <rect key="frame" x="15" y="11" width="100" height="100"/>
+                                                    <rect key="frame" x="15" y="14" width="96" height="96"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="100" id="2ai-qH-f5S"/>
+                                                        <constraint firstAttribute="width" secondItem="4Ww-Vq-5vC" secondAttribute="height" multiplier="1:1" id="0Jb-zB-1iH"/>
+                                                        <constraint firstAttribute="width" constant="96" id="OK9-2D-g7x"/>
                                                     </constraints>
                                                 </imageView>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h15-P9-kZr">
-                                                    <rect key="frame" x="123" y="94" width="237" height="30"/>
-                                                    <state key="normal" title="Follow"/>
-                                                </button>
                                                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="eAf-vU-jEZ">
-                                                    <rect key="frame" x="123" y="13" width="237" height="73"/>
+                                                    <rect key="frame" x="119" y="11" width="241" height="102"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="73" id="Zb3-ne-rl3"/>
-                                                    </constraints>
                                                     <string key="text">Park Vista Community High School
 Public High School 
 7900 Jog Rd, Lake Worth, FL 33467 
@@ -239,26 +233,19 @@ Public High School
 </string>
                                                     <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                    <dataDetectorType key="dataDetectorTypes" phoneNumber="YES" address="YES"/>
                                                 </textView>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="eAf-vU-jEZ" firstAttribute="top" secondItem="Xdh-U0-YAe" secondAttribute="topMargin" constant="2" id="1v3-bg-BON"/>
-                                                <constraint firstItem="h15-P9-kZr" firstAttribute="top" secondItem="eAf-vU-jEZ" secondAttribute="bottom" constant="8" id="4bA-x3-ea0"/>
-                                                <constraint firstAttribute="trailing" secondItem="h15-P9-kZr" secondAttribute="trailing" constant="15" id="5bE-41-WFq"/>
+                                                <constraint firstItem="eAf-vU-jEZ" firstAttribute="top" secondItem="Xdh-U0-YAe" secondAttribute="topMargin" id="1v3-bg-BON"/>
+                                                <constraint firstItem="4Ww-Vq-5vC" firstAttribute="centerY" secondItem="Xdh-U0-YAe" secondAttribute="centerY" id="6Sf-iE-02N"/>
                                                 <constraint firstItem="eAf-vU-jEZ" firstAttribute="trailing" secondItem="Xdh-U0-YAe" secondAttribute="trailingMargin" id="6Xg-e9-hGD"/>
-                                                <constraint firstAttribute="bottom" secondItem="h15-P9-kZr" secondAttribute="bottom" constant="-0.5" id="8Ar-K8-mqA"/>
-                                                <constraint firstItem="h15-P9-kZr" firstAttribute="leading" secondItem="4Ww-Vq-5vC" secondAttribute="trailing" constant="8" id="97H-Qp-MT1"/>
-                                                <constraint firstAttribute="bottomMargin" secondItem="4Ww-Vq-5vC" secondAttribute="bottom" constant="2" id="SAs-QX-6jg"/>
-                                                <constraint firstItem="4Ww-Vq-5vC" firstAttribute="top" secondItem="Xdh-U0-YAe" secondAttribute="topMargin" id="Yih-9j-amf"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="eAf-vU-jEZ" secondAttribute="bottom" id="IBC-Tx-Ftc"/>
                                                 <constraint firstItem="4Ww-Vq-5vC" firstAttribute="leading" secondItem="Xdh-U0-YAe" secondAttribute="leadingMargin" id="aZj-iQ-GpI"/>
-                                                <constraint firstItem="h15-P9-kZr" firstAttribute="top" secondItem="eAf-vU-jEZ" secondAttribute="bottom" constant="8" id="ebG-HQ-rP4"/>
                                                 <constraint firstItem="eAf-vU-jEZ" firstAttribute="leading" secondItem="4Ww-Vq-5vC" secondAttribute="trailing" constant="8" id="iNd-wq-K2t"/>
-                                                <constraint firstItem="eAf-vU-jEZ" firstAttribute="leading" secondItem="4Ww-Vq-5vC" secondAttribute="trailing" constant="8" id="qiG-dU-L3P"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="contentView" destination="eAf-vU-jEZ" id="Lre-8x-stz"/>
-                                            <outlet property="followButton" destination="h15-P9-kZr" id="Vn3-bm-cyV"/>
                                             <outlet property="iconView" destination="4Ww-Vq-5vC" id="Q3I-fB-iET"/>
                                             <outlet property="infoView" destination="eAf-vU-jEZ" id="ht8-ZU-ewC"/>
                                         </connections>
@@ -267,18 +254,24 @@ Public High School
                                         <rect key="frame" x="0.0" y="152" width="375" height="110"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Hjf-1C-ibf" id="P9e-ap-QeR">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="109.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="110"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D9s-dI-2eh">
                                                     <rect key="frame" x="15" y="11" width="36.5" height="21"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="21" id="Zg0-ih-vG8"/>
+                                                    </constraints>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Description" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="pqI-G3-OWp">
+                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" text="Description" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="pqI-G3-OWp">
                                                     <rect key="frame" x="15" y="40" width="345" height="59"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="24" id="clT-vi-MOX"/>
+                                                    </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                 </textView>
