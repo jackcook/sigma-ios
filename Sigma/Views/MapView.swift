@@ -44,6 +44,18 @@ class MapView: UIView, MKMapViewDelegate {
                 self.mapView.addAnnotation(pin)
             }
         }
+        
+        
+//        let span = MKCoordinateSpanMake(0.03, 0.03)
+//        let coordinate = CLLocationCoordinate2D(latitude: 40.741895, longitude: -73.989308)
+//        let region = MKCoordinateRegionMake(coordinate, span)
+//        mapView.setRegion(region, animated: true)
+        let coordinate = CLLocationCoordinate2D(latitude:
+            27.783095, longitude: -81.431101)
+//        mapView.setCenter(coordinate, animated: false)
+        
+        let camera = MKMapCamera(lookingAtCenter: coordinate, fromDistance: 1000000, pitch: 0, heading: 0)
+        mapView.setCamera(camera, animated: false)
     }
     
     func configure(shelters: [Shelter]) {
