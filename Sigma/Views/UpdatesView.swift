@@ -19,7 +19,9 @@ class UpdatesView: UIView, UITableViewDataSource, UITableViewDelegate {
     @IBOutlet weak var updatesTableView: UITableView!
     
     private let dataSource = [
-        Section(title: "Flood Warning!", description: "Flooding central and norlthern Florida: Alachua, Bay, Brevard, Citrus, Columbia, Dixie, Flagler, Franklin, Gilchrist, Gulf, Hamilton, Hernando, Jefferson, Lafayette, Lake, Leon, Levy, Madison, Marion, Orange, Osceola, Polk, Seminole, Sumter, Suwannee, Taylor, Volusia, and Wakulla counties.", image: #imageLiteral(resourceName: "Image")),
+        Section(title: "Hurricane Warning!", description: "BEWARE! Hurricane Irma will make its first landfall on Tampa, Florida on Sunday, September 10, 2017. BE SAFE!", image: #imageLiteral(resourceName: "Image")),
+        Section(title: "Flood Warning!", description: "Flooding Central and Northern Florida: Alachua, Bay, Brevard, Citrus, Columbia, Dixie, Flagler, Franklin, Gilchrist, Gulf, Hamilton, Hernando, Jefferson, Lafayette, Lake, Leon, Levy, Madison, Marion, Orange, Osceola, Polk, Seminole, Sumter, Suwannee, Taylor, Volusia, and Wakulla counties.", image: #imageLiteral(resourceName: "Image")),
+        Section(title:"Power Outage!", description: "As of September 11, 2017, there is a power outage in Broward, Miami-Dade, and Palm Beach County", image: #imageLiteral(resourceName: "Image")),
         Section(title: "Park Vista Community High School", description:"Public High School\n7900 Jog Rd, Lake Worth, FL 33467\n(561) 491-8400\nTask: Clear trees from the road (1 hour)\nReward: 10σ", image: #imageLiteral(resourceName: "Park Vista HS")),
         Section(title: "Park Vista Community High School", description: "Public High School\n7900 Jog Rd, Lake Worth, FL 33467\n(561) 491-8400\nTask: Help find trapped people (1 hour)\nReward: 10σ", image: #imageLiteral(resourceName: "Park Vista HS")),
         Section(title: "Palm Beach Central High School", description: "8499 Forest Hill Blvd, Wellington, FL 33411\n(561) 304-1000\nTask: Babysit children in the shelter (1 hour)\nReward: 5σ", image: #imageLiteral(resourceName: "PalmBeachCentralHS")),
