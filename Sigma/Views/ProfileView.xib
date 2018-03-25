@@ -17,26 +17,48 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Globe" translatesAutoresizingMaskIntoConstraints="NO" id="r83-kP-ARG">
-                    <rect key="frame" x="64" y="52" width="247" height="247"/>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="r83-kP-ARG">
+                    <rect key="frame" x="84" y="131" width="207" height="207"/>
                     <constraints>
                         <constraint firstAttribute="width" secondItem="r83-kP-ARG" secondAttribute="height" multiplier="1:1" id="I2f-Rz-T0y"/>
                     </constraints>
                 </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Jack Cook" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DPf-eM-FNU">
+                    <rect key="frame" x="125" y="44" width="125" height="32"/>
+                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="26"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Balance: 10σ" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B5j-Yp-82U">
+                    <rect key="frame" x="137" y="86" width="101" height="21"/>
+                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="05x-I0-Qrh">
+                    <rect key="frame" x="0.0" y="362" width="375" height="305"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </tableView>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="r83-kP-ARG" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="32" id="Jaf-ZX-Rbv"/>
-                <constraint firstItem="r83-kP-ARG" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="64" id="K4E-9q-FjC"/>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="r83-kP-ARG" secondAttribute="trailing" constant="64" id="hg1-2x-aJ7"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="05x-I0-Qrh" secondAttribute="bottom" id="26k-0R-6zz"/>
+                <constraint firstItem="DPf-eM-FNU" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="3S4-Ik-XVi"/>
+                <constraint firstItem="B5j-Yp-82U" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="6Lh-UP-m5Y"/>
+                <constraint firstItem="05x-I0-Qrh" firstAttribute="top" secondItem="r83-kP-ARG" secondAttribute="bottom" constant="24" id="6Zw-Ah-nzi"/>
+                <constraint firstItem="r83-kP-ARG" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="84" id="K4E-9q-FjC"/>
+                <constraint firstItem="B5j-Yp-82U" firstAttribute="top" secondItem="DPf-eM-FNU" secondAttribute="bottom" constant="10" id="Q47-rq-VDT"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="05x-I0-Qrh" secondAttribute="trailing" id="Sf7-kq-Fx4"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="r83-kP-ARG" secondAttribute="trailing" constant="84" id="hg1-2x-aJ7"/>
+                <constraint firstItem="r83-kP-ARG" firstAttribute="top" secondItem="B5j-Yp-82U" secondAttribute="bottom" constant="24" id="iHu-F6-ajp"/>
+                <constraint firstItem="05x-I0-Qrh" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="mWT-iw-WND"/>
+                <constraint firstItem="DPf-eM-FNU" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="24" id="pj5-Cs-HZi"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <connections>
                 <outlet property="imageView" destination="r83-kP-ARG" id="cxx-44-lyD"/>
+                <outlet property="transactionsTableView" destination="05x-I0-Qrh" id="ShQ-Jt-Xy1"/>
             </connections>
         </view>
     </objects>
-    <resources>
-        <image name="Globe" width="24" height="24"/>
-    </resources>
 </document>

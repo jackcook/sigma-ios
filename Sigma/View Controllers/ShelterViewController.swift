@@ -6,13 +6,16 @@
 //  Copyright © 2018 Sigma. All rights reserved.
 //
 
+import EFQRCode
 import UIKit
 
-class ShelterViewController: UIViewController, SigmaTabBarDelegate, UITableViewDataSource, UITableViewDelegate {
+class ShelterViewController: UIViewController, SigmaTabBarDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITableViewDataSource, UITableViewDelegate {
     
     @IBOutlet weak var topBar: UIView!
     @IBOutlet weak var contentTableView: UITableView!
     @IBOutlet weak var bottomBar: SigmaTabBar!
+    
+    private var userToDisplay: User?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -48,10 +51,58 @@ class ShelterViewController: UIViewController, SigmaTabBarDelegate, UITableViewD
         bottomBar.layer.shadowPath = bottomShadowPath.cgPath
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let identifier = segue.identifier else {
+            return
+        }
+        
+        switch identifier {
+        case "personSegue":
+            guard let profileController = segue.destination as? PersonViewController, let user = userToDisplay else {
+                return
+            }
+            
+            profileController.user = user
+        default:
+            break
+        }
+    }
+    
+    @IBAction func cameraButton(_ sender: UIButton) {
+        let pickerController = UIImagePickerController()
+        pickerController.allowsEditing = false
+        pickerController.delegate = self
+        pickerController.sourceType = .camera
+        present(pickerController, animated: true, completion: nil)
+    }
+    
     // MARK: Sigma Tab Bar Delegate
     
     func updatedSelectedTab(_ index: Int) {
         contentTableView.reloadData()
+    }
+    
+    // MARK: UIImagePickerControllerDelegate
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+        picker.dismiss(animated: true, completion: nil)
+        
+        guard let image = info[UIImagePickerControllerOriginalImage] as? UIImage else {
+            return
+        }
+        
+        guard let cgImage = image.cgImage, let senderId = EFQRCode.recognize(image: cgImage)?.first else {
+            return
+        }
+        
+        UserRequest(id: senderId).start { user in
+            guard let user = user else {
+                return
+            }
+            
+            self.userToDisplay = user
+            self.performSegue(withIdentifier: "personSegue", sender: self)
+        }
     }
     
     // MARK: UITableViewDataSource

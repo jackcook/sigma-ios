@@ -33,6 +33,9 @@
 		EB90CC9B2066FA5600A0BFE9 /* PaymentRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB90CC9A2066FA5600A0BFE9 /* PaymentRequest.swift */; };
 		EB90CC9D2066FBC000A0BFE9 /* UserRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB90CC9C2066FBC000A0BFE9 /* UserRequest.swift */; };
 		EB90CC9F20670AB300A0BFE9 /* PlaceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB90CC9E20670AB300A0BFE9 /* PlaceViewController.swift */; };
+		EB90CCA12067469A00A0BFE9 /* PersonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB90CCA02067469A00A0BFE9 /* PersonViewController.swift */; };
+		EB90CCA32067537A00A0BFE9 /* TransactionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB90CCA22067537A00A0BFE9 /* TransactionCell.swift */; };
+		EB90CCA52067538100A0BFE9 /* TransactionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EB90CCA42067538100A0BFE9 /* TransactionCell.xib */; };
 		EBCA9AB5206616E500896BBA /* SigmaUserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBCA9AB4206616E500896BBA /* SigmaUserDefaults.swift */; };
 		EBCA9AB72066246800896BBA /* SigmaUserDefaultsKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBCA9AB62066246800896BBA /* SigmaUserDefaultsKey.swift */; };
 		EBCA9AB9206628A300896BBA /* UserTypeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBCA9AB8206628A300896BBA /* UserTypeViewController.swift */; };
@@ -68,6 +71,9 @@
 		EB90CC9A2066FA5600A0BFE9 /* PaymentRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentRequest.swift; sourceTree = "<group>"; };
 		EB90CC9C2066FBC000A0BFE9 /* UserRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRequest.swift; sourceTree = "<group>"; };
 		EB90CC9E20670AB300A0BFE9 /* PlaceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceViewController.swift; sourceTree = "<group>"; };
+		EB90CCA02067469A00A0BFE9 /* PersonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonViewController.swift; sourceTree = "<group>"; };
+		EB90CCA22067537A00A0BFE9 /* TransactionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionCell.swift; sourceTree = "<group>"; };
+		EB90CCA42067538100A0BFE9 /* TransactionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TransactionCell.xib; sourceTree = "<group>"; };
 		EBCA9AB4206616E500896BBA /* SigmaUserDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SigmaUserDefaults.swift; sourceTree = "<group>"; };
 		EBCA9AB62066246800896BBA /* SigmaUserDefaultsKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SigmaUserDefaultsKey.swift; sourceTree = "<group>"; };
 		EBCA9AB8206628A300896BBA /* UserTypeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTypeViewController.swift; sourceTree = "<group>"; };
@@ -144,6 +150,7 @@
 				EBCA9AB8206628A300896BBA /* UserTypeViewController.swift */,
 				EB90CC7720666D1400A0BFE9 /* TransactionViewController.swift */,
 				EB90CC962066D01B00A0BFE9 /* NewUserViewController.swift */,
+				EB90CCA02067469A00A0BFE9 /* PersonViewController.swift */,
 				EB90CC9E20670AB300A0BFE9 /* PlaceViewController.swift */,
 			);
 			path = "View Controllers";
@@ -161,6 +168,8 @@
 				EB3FAA9520660F18006033FF /* ProfileView.xib */,
 				EBCA9ABA20662A0F00896BBA /* UserTypeButton.swift */,
 				EB90CC982066DD7100A0BFE9 /* ScanButton.swift */,
+				EB90CCA22067537A00A0BFE9 /* TransactionCell.swift */,
+				EB90CCA42067538100A0BFE9 /* TransactionCell.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -281,6 +290,7 @@
 			files = (
 				EB3FAA9620660F18006033FF /* ProfileView.xib in Resources */,
 				D1CE0E072065EC58005DE5BF /* LaunchScreen.storyboard in Resources */,
+				EB90CCA52067538100A0BFE9 /* TransactionCell.xib in Resources */,
 				D1CE0E042065EC58005DE5BF /* Assets.xcassets in Resources */,
 				D1CE0E022065EC58005DE5BF /* Main.storyboard in Resources */,
 				EB90CC822066A66100A0BFE9 /* MapView.xib in Resources */,
@@ -372,7 +382,9 @@
 				D1CE0DFD2065EC58005DE5BF /* AppDelegate.swift in Sources */,
 				EB90CC74206640BB00A0BFE9 /* ShelterViewController.swift in Sources */,
 				EBCA9AB9206628A300896BBA /* UserTypeViewController.swift in Sources */,
+				EB90CCA12067469A00A0BFE9 /* PersonViewController.swift in Sources */,
 				EB90CC932066B8F900A0BFE9 /* User.swift in Sources */,
+				EB90CCA32067537A00A0BFE9 /* TransactionCell.swift in Sources */,
 				EB90CC912066B85600A0BFE9 /* CreateUserRequest.swift in Sources */,
 				EB90CC8A2066B30400A0BFE9 /* SigmaRequest.swift in Sources */,
 				EB90CC8F2066B51400A0BFE9 /* Shelter.swift in Sources */,

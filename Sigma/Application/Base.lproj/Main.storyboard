@@ -572,10 +572,23 @@ Public High School
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="klw-oY-DzK">
+                                        <rect key="frame" x="327" y="20" width="48" height="48"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="klw-oY-DzK" secondAttribute="height" multiplier="1:1" id="889-Wm-gps"/>
+                                        </constraints>
+                                        <state key="normal" image="Camera"/>
+                                        <connections>
+                                            <action selector="cameraButton:" destination="0fE-7H-V7H" eventType="touchUpInside" id="pgM-6G-Hha"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="klw-oY-DzK" secondAttribute="bottom" id="0He-cC-zxI"/>
+                                    <constraint firstItem="klw-oY-DzK" firstAttribute="top" secondItem="2on-cr-f1H" secondAttribute="top" constant="20" id="RpV-io-PL1"/>
                                     <constraint firstItem="WRB-Pz-rbP" firstAttribute="centerY" secondItem="2on-cr-f1H" secondAttribute="centerY" constant="10" id="aqz-Yw-O0c"/>
+                                    <constraint firstAttribute="trailing" secondItem="klw-oY-DzK" secondAttribute="trailing" id="bPu-21-s93"/>
                                     <constraint firstItem="WRB-Pz-rbP" firstAttribute="centerX" secondItem="2on-cr-f1H" secondAttribute="centerX" id="eVY-VU-N28"/>
                                     <constraint firstAttribute="height" constant="68" id="iuh-Da-ejx"/>
                                 </constraints>
@@ -600,6 +613,7 @@ Public High School
                         <outlet property="contentTableView" destination="tq1-wT-sBZ" id="2eR-Es-qaq"/>
                         <outlet property="topBar" destination="2on-cr-f1H" id="W9e-iL-Hh4"/>
                         <segue destination="nr1-pQ-j8z" kind="show" identifier="transactionSegue" id="s4q-nk-5ab"/>
+                        <segue destination="XN8-kg-OYB" kind="show" identifier="personSegue" id="Rfg-c4-q3V"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LXJ-2O-1Sc" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -726,6 +740,91 @@ Public High School
             </objects>
             <point key="canvasLocation" x="1729" y="528"/>
         </scene>
+        <!--Person View Controller-->
+        <scene sceneID="U9K-Qo-1sN">
+            <objects>
+                <viewController id="XN8-kg-OYB" customClass="PersonViewController" customModule="Sigma" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="HvV-vE-7Oc"/>
+                        <viewControllerLayoutGuide type="bottom" id="l80-LJ-C0P"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="CDS-Fn-LAO">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MdI-W4-YRg">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="68"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Profile" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RtN-bS-jqz">
+                                        <rect key="frame" x="157.5" y="32.5" width="60" height="23"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="19"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j3V-qZ-Vfy">
+                                        <rect key="frame" x="0.0" y="20" width="48" height="48"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="j3V-qZ-Vfy" secondAttribute="height" multiplier="1:1" id="GLS-1j-ifg"/>
+                                        </constraints>
+                                        <state key="normal" image="Back"/>
+                                        <connections>
+                                            <action selector="backButton:" destination="nr1-pQ-j8z" eventType="touchUpInside" id="EHV-Qi-uiV"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="RtN-bS-jqz" firstAttribute="centerY" secondItem="MdI-W4-YRg" secondAttribute="centerY" constant="10" id="24f-ze-dTc"/>
+                                    <constraint firstAttribute="bottom" secondItem="j3V-qZ-Vfy" secondAttribute="bottom" id="KQM-VW-Yg0"/>
+                                    <constraint firstAttribute="height" constant="68" id="OIp-t5-hds"/>
+                                    <constraint firstItem="j3V-qZ-Vfy" firstAttribute="leading" secondItem="MdI-W4-YRg" secondAttribute="leading" id="UVy-e4-SqY"/>
+                                    <constraint firstItem="RtN-bS-jqz" firstAttribute="centerX" secondItem="MdI-W4-YRg" secondAttribute="centerX" id="Un0-ar-kvo"/>
+                                    <constraint firstItem="j3V-qZ-Vfy" firstAttribute="top" secondItem="MdI-W4-YRg" secondAttribute="top" constant="20" id="kww-np-ja7"/>
+                                </constraints>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Jack Cook" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d25-Uu-wGg">
+                                <rect key="frame" x="125" y="92" width="124.5" height="32"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="26"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Balance: 10σ" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L8C-WY-mVz">
+                                <rect key="frame" x="137" y="134" width="101" height="21"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="6GC-Hq-I3K">
+                                <rect key="frame" x="0.0" y="179" width="375" height="488"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="6GC-Hq-I3K" firstAttribute="top" secondItem="L8C-WY-mVz" secondAttribute="bottom" constant="24" id="51J-Jh-ARI"/>
+                            <constraint firstItem="d25-Uu-wGg" firstAttribute="top" secondItem="MdI-W4-YRg" secondAttribute="bottom" constant="24" id="7KW-i6-Xyv"/>
+                            <constraint firstItem="MdI-W4-YRg" firstAttribute="leading" secondItem="CDS-Fn-LAO" secondAttribute="leading" id="92B-X6-bHh"/>
+                            <constraint firstItem="l80-LJ-C0P" firstAttribute="top" secondItem="6GC-Hq-I3K" secondAttribute="bottom" id="AVn-Uy-wnn"/>
+                            <constraint firstAttribute="trailing" secondItem="MdI-W4-YRg" secondAttribute="trailing" id="E7S-xJ-u3V"/>
+                            <constraint firstItem="6GC-Hq-I3K" firstAttribute="leading" secondItem="CDS-Fn-LAO" secondAttribute="leading" id="LLM-hG-JBm"/>
+                            <constraint firstItem="L8C-WY-mVz" firstAttribute="top" secondItem="d25-Uu-wGg" secondAttribute="bottom" constant="10" id="Vz0-qV-Peu"/>
+                            <constraint firstAttribute="trailing" secondItem="6GC-Hq-I3K" secondAttribute="trailing" id="cmJ-9o-9w5"/>
+                            <constraint firstItem="L8C-WY-mVz" firstAttribute="centerX" secondItem="CDS-Fn-LAO" secondAttribute="centerX" id="oH1-sm-6VF"/>
+                            <constraint firstItem="d25-Uu-wGg" firstAttribute="centerX" secondItem="CDS-Fn-LAO" secondAttribute="centerX" id="oQ5-LN-kGS"/>
+                            <constraint firstItem="MdI-W4-YRg" firstAttribute="top" secondItem="CDS-Fn-LAO" secondAttribute="top" id="qXn-P9-CyC"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="balanceLabel" destination="L8C-WY-mVz" id="cj1-04-dcL"/>
+                        <outlet property="nameLabel" destination="d25-Uu-wGg" id="ghJ-Xb-w6B"/>
+                        <outlet property="topBar" destination="MdI-W4-YRg" id="Adh-oi-1EQ"/>
+                        <outlet property="transactionsTableView" destination="6GC-Hq-I3K" id="fab-yN-hx7"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="sNQ-r7-iJq" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1729" y="1248"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="Aye-1A-zYq">
             <objects>
@@ -748,6 +847,7 @@ Public High School
     </scenes>
     <resources>
         <image name="Back" width="24" height="24"/>
+        <image name="Camera" width="24" height="24"/>
         <image name="Close" width="24" height="24"/>
     </resources>
 </document>

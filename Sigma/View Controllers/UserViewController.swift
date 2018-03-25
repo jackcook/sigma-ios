@@ -14,6 +14,8 @@ class UserViewController: UIViewController, MapViewDelegate, SigmaTabBarDelegate
     @IBOutlet weak var contentView: UIView!
     @IBOutlet weak var bottomBar: SigmaTabBar!
     
+    var user: User!
+    
     private var mapView: MapView!
     private var profileView: ProfileView!
 
@@ -40,6 +42,7 @@ class UserViewController: UIViewController, MapViewDelegate, SigmaTabBarDelegate
         
         contentView.addSubview(profileView)
         profileView.frame = contentView.bounds
+        profileView.user = user
         self.profileView = profileView
         
         guard let mapView = Bundle.main.loadNibNamed("MapView", owner: self, options: nil)?.first as? MapView else {
