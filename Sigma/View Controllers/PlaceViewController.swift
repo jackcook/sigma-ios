@@ -86,7 +86,7 @@ class PlaceViewController: UIViewController, UITableViewDataSource, UITableViewD
             
             let description = dataSource[indexPath.row - 1].description as NSString
             let boundingSize = CGSize(width: tableView.frame.size.width - horizontalMargin, height: .greatestFiniteMagnitude)
-            let attributes = [NSFontAttributeName: UIFont.systemFont(ofSize: 14)]
+            let attributes: [NSAttributedStringKey: Any] = [.font: UIFont.systemFont(ofSize: 14)]
             let size = description.boundingRect(with: boundingSize, options: [.usesLineFragmentOrigin, .usesFontLeading], attributes: attributes, context: nil).size
             
             return size.height + verticalMargin

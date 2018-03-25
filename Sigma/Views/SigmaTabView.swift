@@ -21,7 +21,7 @@ class SigmaTabView: UIView {
         self.tab = tab
         
         nameLabel = UILabel()
-        nameLabel.font = UIFont.systemFont(ofSize: 12, weight: UIFontWeightMedium)
+        nameLabel.font = UIFont.systemFont(ofSize: 12, weight: .medium)
         nameLabel.text = tab.name
 //        nameLabel.textColor = UIColor.accentDarkColor()
         nameLabel.textColor = UIColor.black
