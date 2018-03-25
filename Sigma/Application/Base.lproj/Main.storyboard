@@ -130,7 +130,7 @@
         <!--User View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="UserViewController" customModule="Sigma" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="UserViewController" id="BYZ-38-t0r" customClass="UserViewController" customModule="Sigma" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -509,7 +509,7 @@ Public High School
         <!--Shelter View Controller-->
         <scene sceneID="ns0-uV-cAo">
             <objects>
-                <viewController id="0fE-7H-V7H" customClass="ShelterViewController" customModule="Sigma" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ShelterViewController" id="0fE-7H-V7H" customClass="ShelterViewController" customModule="Sigma" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="kmf-oh-yo5"/>
                         <viewControllerLayoutGuide type="bottom" id="rxv-tY-f4L"/>

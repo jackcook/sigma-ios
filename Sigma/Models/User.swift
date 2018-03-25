@@ -16,7 +16,7 @@ struct User {
     let transactions: [Transaction]
     
     init(json: JSON) {
-        id = json["user_id"].string ?? ""
+        id = json["id"].string ?? ""
         name = json["name"].string ?? ""
         balance = json["balance"].int ?? 0
         

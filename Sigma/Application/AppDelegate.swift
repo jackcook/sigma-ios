@@ -19,6 +19,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             SigmaUserDefaults.setDefaultValues()
         }
         
+        if SigmaUserDefaults.string(forKey: .userIdentifier) != nil {
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let controller = storyboard.instantiateViewController(withIdentifier: "UserViewController")
+            window?.rootViewController = controller
+        }
+        
         return true
     }
 }

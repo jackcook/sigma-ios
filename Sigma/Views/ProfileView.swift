@@ -11,10 +11,18 @@ import UIKit
 
 class ProfileView: UIView, UITableViewDataSource, UITableViewDelegate {
     
+    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var balanceLabel: UILabel!
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var transactionsTableView: UITableView!
     
-    var user: User!
+    var user: User? {
+        didSet {
+            nameLabel.text = user?.name
+            balanceLabel.text = "Balance: \(user?.balance ?? 0)σ"
+            transactionsTableView.reloadData()
+        }
+    }
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -33,13 +41,27 @@ class ProfileView: UIView, UITableViewDataSource, UITableViewDelegate {
     // MARK: UITableViewDataSource Methods
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return user.transactions.count
+        return user?.transactions.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let transaction = user?.transactions[indexPath.row], let user = user else {
+            return UITableViewCell()
+        }
+        
         let cell = UITableViewCell(style: .subtitle, reuseIdentifier: "TransactionCell")
-        cell.textLabel?.text = "Jack sent 10σ to Annie"
-        cell.detailTextLabel?.text = "March 29, 2018"
+        
+        if transaction.sender == user.id {
+            cell.textLabel?.text = "You spent \(transaction.amount)σ"
+        } else {
+            cell.textLabel?.text = "You received \(transaction.amount)σ"
+        }
+        
+        let formatter = DateFormatter()
+        formatter.dateStyle = .medium
+        formatter.timeStyle = .medium
+        cell.detailTextLabel?.text = formatter.string(from: transaction.timestamp)
+        
         return cell
     }
 }

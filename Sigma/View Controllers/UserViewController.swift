@@ -16,8 +16,8 @@ class UserViewController: UIViewController, MapViewDelegate, SigmaTabBarDelegate
     
     var user: User!
     
-    private var mapView: MapView!
-    private var profileView: ProfileView!
+    private var mapView: MapView?
+    private var profileView: ProfileView?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,6 +31,20 @@ class UserViewController: UIViewController, MapViewDelegate, SigmaTabBarDelegate
         ]
         
         bottomBar.updateTabs(tabs)
+        
+        guard let userIdentifier = SigmaUserDefaults.string(forKey: .userIdentifier) else {
+            return
+        }
+        
+        if user == nil {
+            UserRequest(id: userIdentifier).start { user in
+                guard let user = user else {
+                    return
+                }
+                
+                self.profileView?.user = user
+            }
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -82,7 +96,7 @@ class UserViewController: UIViewController, MapViewDelegate, SigmaTabBarDelegate
     // MARK: SigmaTabBarDelegate Methods
     
     func updatedSelectedTab(_ index: Int) {
-        guard mapView != nil, profileView != nil else {
+        guard let mapView = mapView, let profileView = profileView else {
             return
         }
         

@@ -56,7 +56,9 @@
             </constraints>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <connections>
+                <outlet property="balanceLabel" destination="B5j-Yp-82U" id="wzF-DQ-PIK"/>
                 <outlet property="imageView" destination="r83-kP-ARG" id="cxx-44-lyD"/>
+                <outlet property="nameLabel" destination="DPf-eM-FNU" id="3oW-Bh-urw"/>
                 <outlet property="transactionsTableView" destination="05x-I0-Qrh" id="ShQ-Jt-Xy1"/>
             </connections>
         </view>
