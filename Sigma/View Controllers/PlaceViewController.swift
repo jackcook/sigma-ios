@@ -22,7 +22,7 @@ class PlaceViewController: UIViewController, UITableViewDataSource, UITableViewD
         Section(title: "Open Hours", description: "24/7"),
         Section(title: "Meal Plan", description: "Breakfast = 5σ\n• Granola bars\n• Cereal with milk\n• Peanut butter sandwich \n• Applesauce\n\nLunch = 5σ\n• Macaroni and cheese\n• Canned tuna and canned peas\n• Beef stew and bread\n• Canned mandarin orange\n• Canned peach\n\nDinner = 5σ\n• Canned chicken with canned corn and carrots\n• Fried rice with spam and canned peas and carrots\n• Spaghetti with ground beef and tomato sauce\n• Canned pears\n• Canned pineapple"),
         Section(title: "Resources", description: "• Water(1/2 gal) = 5σ\n• Fuel (1 gal) = 10 σ\n• Shower (10 min) = 15σ\n• Toothbrush = 2σ\n• Toothpaste = 2σ\n• Soap = 2σ\n• Shampoo = 2σ\n• Towel = 1σ\n• Clothing = 2σ\n• Sleeping bag = 5σ"),
-        Section(title: "Tasks", description: "• Help out the rescue team in finding people who are trapped (1 hour) = 10σ \n• Help rebuild houses (1 hour) = 10σ \n• Clear trees from the road (1 hour) = 10σ")
+        Section(title: "Tasks", description: "• Help find trapped people (1 hour) = 10σ \n• Help rebuild houses (1 hour) = 10σ \n• Clear trees from the road (1 hour) = 10σ")
     ]
     
     override func viewDidLoad() {

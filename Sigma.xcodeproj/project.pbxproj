@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		D171586C2067C60B0093B611 /* ShelterInfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D171586B2067C60B0093B611 /* ShelterInfoCell.swift */; };
+		D17158732067E5870093B611 /* UpdatesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D17158722067E5870093B611 /* UpdatesView.swift */; };
+		D17158752067E76B0093B611 /* UpdatesView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D17158742067E76B0093B611 /* UpdatesView.xib */; };
+		D17158772067EAB70093B611 /* UpdatesCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D17158762067EAB70093B611 /* UpdatesCell.xib */; };
+		D17158792067ECE90093B611 /* UpdatesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D17158782067ECE90093B611 /* UpdatesCell.swift */; };
 		D1B5C9E1206757BF0075CE54 /* ShelterDataCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1B5C9E0206757BF0075CE54 /* ShelterDataCell.swift */; };
 		D1CE0DFD2065EC58005DE5BF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1CE0DFC2065EC58005DE5BF /* AppDelegate.swift */; };
 		D1CE0DFF2065EC58005DE5BF /* UserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1CE0DFE2065EC58005DE5BF /* UserViewController.swift */; };
@@ -51,6 +55,10 @@
 /* Begin PBXFileReference section */
 		29B0A8EA261E564E65BE8800 /* Pods-Sigma.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Sigma.release.xcconfig"; path = "Pods/Target Support Files/Pods-Sigma/Pods-Sigma.release.xcconfig"; sourceTree = "<group>"; };
 		D171586B2067C60B0093B611 /* ShelterInfoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShelterInfoCell.swift; sourceTree = "<group>"; };
+		D17158722067E5870093B611 /* UpdatesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdatesView.swift; sourceTree = "<group>"; };
+		D17158742067E76B0093B611 /* UpdatesView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UpdatesView.xib; sourceTree = "<group>"; };
+		D17158762067EAB70093B611 /* UpdatesCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UpdatesCell.xib; sourceTree = "<group>"; };
+		D17158782067ECE90093B611 /* UpdatesCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdatesCell.swift; sourceTree = "<group>"; };
 		D1B5C9E0206757BF0075CE54 /* ShelterDataCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShelterDataCell.swift; sourceTree = "<group>"; };
 		D1CE0DF92065EC58005DE5BF /* Sigma.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Sigma.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D1CE0DFC2065EC58005DE5BF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -171,6 +179,7 @@
 		EB90CC842066AFD200A0BFE9 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				D17158722067E5870093B611 /* UpdatesView.swift */,
 				EB90CC7520666B1000A0BFE9 /* ItemCell.swift */,
 				D171586B2067C60B0093B611 /* ShelterInfoCell.swift */,
 				D1B5C9E0206757BF0075CE54 /* ShelterDataCell.swift */,
@@ -186,6 +195,9 @@
 				EB90CC982066DD7100A0BFE9 /* ScanButton.swift */,
 				EB90CCA22067537A00A0BFE9 /* TransactionCell.swift */,
 				EB90CCA42067538100A0BFE9 /* TransactionCell.xib */,
+				D17158742067E76B0093B611 /* UpdatesView.xib */,
+				D17158762067EAB70093B611 /* UpdatesCell.xib */,
+				D17158782067ECE90093B611 /* UpdatesCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -315,12 +327,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D17158752067E76B0093B611 /* UpdatesView.xib in Resources */,
 				EB3FAA9620660F18006033FF /* ProfileView.xib in Resources */,
 				EB90CCAC2067E8CC00A0BFE9 /* ProfileInfoCell.xib in Resources */,
 				D1CE0E072065EC58005DE5BF /* LaunchScreen.storyboard in Resources */,
 				EB90CCA52067538100A0BFE9 /* TransactionCell.xib in Resources */,
 				D1CE0E042065EC58005DE5BF /* Assets.xcassets in Resources */,
 				D1CE0E022065EC58005DE5BF /* Main.storyboard in Resources */,
+				D17158772067EAB70093B611 /* UpdatesCell.xib in Resources */,
 				EB90CC822066A66100A0BFE9 /* MapView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -402,9 +416,11 @@
 				EB90CC7620666B1000A0BFE9 /* ItemCell.swift in Sources */,
 				EB90CC8C2066B45C00A0BFE9 /* SheltersRequest.swift in Sources */,
 				EB90CC802066A65300A0BFE9 /* MapView.swift in Sources */,
+				D17158732067E5870093B611 /* UpdatesView.swift in Sources */,
 				EB3FAA9420660F04006033FF /* ProfileView.swift in Sources */,
 				D1B5C9E1206757BF0075CE54 /* ShelterDataCell.swift in Sources */,
 				D1CE0DFF2065EC58005DE5BF /* UserViewController.swift in Sources */,
+				D17158792067ECE90093B611 /* UpdatesCell.swift in Sources */,
 				EBCA9AB72066246800896BBA /* SigmaUserDefaultsKey.swift in Sources */,
 				EB90CC992066DD7100A0BFE9 /* ScanButton.swift in Sources */,
 				EB90CC7820666D1400A0BFE9 /* TransactionViewController.swift in Sources */,

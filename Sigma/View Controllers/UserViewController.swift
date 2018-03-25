@@ -16,6 +16,7 @@ class UserViewController: UIViewController, MapViewDelegate, ProfileViewDelegate
     
     var user: User!
     
+    private var updatesView: UpdatesView?
     private var mapView: MapView?
     private var profileView: ProfileView?
 
@@ -25,7 +26,7 @@ class UserViewController: UIViewController, MapViewDelegate, ProfileViewDelegate
         bottomBar.delegate = self
         
         let tabs = [
-            SigmaTab(name: "News", image: #imageLiteral(resourceName: "Feed")),
+            SigmaTab(name: "Updates", image: #imageLiteral(resourceName: "Feed")),
             SigmaTab(name: "Map", image: #imageLiteral(resourceName: "Globe")),
             SigmaTab(name: "Profile", image: #imageLiteral(resourceName: "User"))
         ]
@@ -36,6 +37,14 @@ class UserViewController: UIViewController, MapViewDelegate, ProfileViewDelegate
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        
+        guard let updatesView = Bundle.main.loadNibNamed("UpdatesView", owner: self, options: nil)?.first as? UpdatesView else {
+            return
+        }
+        
+        contentView.addSubview(updatesView)
+        updatesView.frame = contentView.bounds
+        self.updatesView = updatesView
         
         guard let profileView = Bundle.main.loadNibNamed("ProfileView", owner: self, options: nil)?.first as? ProfileView else {
             return
@@ -103,14 +112,18 @@ class UserViewController: UIViewController, MapViewDelegate, ProfileViewDelegate
     // MARK: SigmaTabBarDelegate Methods
     
     func updatedSelectedTab(_ index: Int) {
-        guard let mapView = mapView, let profileView = profileView else {
+        guard let updatesView = updatesView, let mapView = mapView, let profileView = profileView else {
             return
         }
         
+        updatesView.isUserInteractionEnabled = false
         mapView.isUserInteractionEnabled = false
         profileView.isUserInteractionEnabled = false
         
         switch index {
+        case 0:
+            updatesView.isUserInteractionEnabled = true
+            contentView.bringSubview(toFront: updatesView)
         case 1:
             mapView.isUserInteractionEnabled = true
             contentView.bringSubview(toFront: mapView)
