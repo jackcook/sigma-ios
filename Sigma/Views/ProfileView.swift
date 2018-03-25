@@ -9,59 +9,77 @@
 import EFQRCode
 import UIKit
 
+protocol ProfileViewDelegate {
+    func needsProfileUpdate(completion: @escaping (User?) -> Void)
+}
+
 class ProfileView: UIView, UITableViewDataSource, UITableViewDelegate {
     
-    @IBOutlet weak var nameLabel: UILabel!
-    @IBOutlet weak var balanceLabel: UILabel!
-    @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var transactionsTableView: UITableView!
+    
+    var delegate: ProfileViewDelegate?
     
     var user: User? {
         didSet {
-            nameLabel.text = user?.name
-            balanceLabel.text = "Balance: \(user?.balance ?? 0)σ"
             transactionsTableView.reloadData()
         }
     }
     
+    private var refreshControl = UIRefreshControl()
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         
-        guard let address = SigmaUserDefaults.string(forKey: .userIdentifier) else {
-            return
-        }
-        
-        if let tryImage = EFQRCode.generate(content: address) {
-            imageView.image = UIImage(cgImage: tryImage)
-        }
-        
         transactionsTableView.dataSource = self
+        
+        let nib = UINib(nibName: "ProfileInfoCell", bundle: nil)
+        transactionsTableView.register(nib, forCellReuseIdentifier: "ProfileInfoCell")
+        
+        refreshControl.addTarget(self, action: #selector(refreshProfileData), for: .valueChanged)
+        transactionsTableView.addSubview(refreshControl)
+    }
+    
+    @objc private func refreshProfileData() {
+        delegate?.needsProfileUpdate { user in
+            self.refreshControl.endRefreshing()
+        }
     }
     
     // MARK: UITableViewDataSource Methods
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return user?.transactions.count ?? 0
+        return (user?.transactions.count ?? 0) + 1
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let transaction = user?.transactions.reversed()[indexPath.row], let user = user else {
+        guard let user = user else {
             return UITableViewCell()
         }
         
-        let cell = UITableViewCell(style: .subtitle, reuseIdentifier: "TransactionCell")
-        
-        if transaction.sender == user.id {
-            cell.textLabel?.text = "You spent \(transaction.amount)σ"
-        } else {
-            cell.textLabel?.text = "You received \(transaction.amount)σ"
+        switch indexPath.row {
+        case 0:
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: "ProfileInfoCell", for: indexPath) as? ProfileInfoCell else {
+                return UITableViewCell()
+            }
+            
+            cell.configure(user: user)
+            return cell
+        default:
+            let transaction = user.transactions.reversed()[indexPath.row - 1]
+            let cell = UITableViewCell(style: .subtitle, reuseIdentifier: "TransactionCell")
+            
+            if transaction.sender == user.id {
+                cell.textLabel?.text = "You spent \(transaction.amount)σ"
+            } else {
+                cell.textLabel?.text = "You received \(transaction.amount)σ"
+            }
+            
+            let formatter = DateFormatter()
+            formatter.dateStyle = .medium
+            formatter.timeStyle = .medium
+            cell.detailTextLabel?.text = formatter.string(from: transaction.timestamp)
+            
+            return cell
         }
-        
-        let formatter = DateFormatter()
-        formatter.dateStyle = .medium
-        formatter.timeStyle = .medium
-        cell.detailTextLabel?.text = formatter.string(from: transaction.timestamp)
-        
-        return cell
     }
 }

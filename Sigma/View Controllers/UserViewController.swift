@@ -8,7 +8,7 @@
 
 import UIKit
 
-class UserViewController: UIViewController, MapViewDelegate, SigmaTabBarDelegate {
+class UserViewController: UIViewController, MapViewDelegate, ProfileViewDelegate, SigmaTabBarDelegate {
     
     @IBOutlet weak var topBar: UIView!
     @IBOutlet weak var contentView: UIView!
@@ -31,20 +31,7 @@ class UserViewController: UIViewController, MapViewDelegate, SigmaTabBarDelegate
         ]
         
         bottomBar.updateTabs(tabs)
-        
-        guard let userIdentifier = SigmaUserDefaults.string(forKey: .userIdentifier) else {
-            return
-        }
-        
-        if user == nil {
-            UserRequest(id: userIdentifier).start { user in
-                guard let user = user else {
-                    return
-                }
-                
-                self.profileView?.user = user
-            }
-        }
+        needsProfileUpdate { user in }
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -55,6 +42,7 @@ class UserViewController: UIViewController, MapViewDelegate, SigmaTabBarDelegate
         }
         
         contentView.addSubview(profileView)
+        profileView.delegate = self
         profileView.frame = contentView.bounds
         profileView.user = user
         self.profileView = profileView
@@ -91,6 +79,25 @@ class UserViewController: UIViewController, MapViewDelegate, SigmaTabBarDelegate
     
     func shouldDisplayInformation(for shelter: Shelter) {
         performSegue(withIdentifier: "placeSegue", sender: self)
+    }
+    
+    // MARK: ProfileViewDelegate Methods
+    
+    func needsProfileUpdate(completion: @escaping (User?) -> Void) {
+        guard let userIdentifier = SigmaUserDefaults.string(forKey: .userIdentifier) else {
+            return
+        }
+        
+        UserRequest(id: userIdentifier).start { user in
+            guard let user = user else {
+                return
+            }
+            
+            self.user = user
+            self.profileView?.user = user
+            
+            completion(user)
+        }
     }
     
     // MARK: SigmaTabBarDelegate Methods
