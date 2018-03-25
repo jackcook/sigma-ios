@@ -48,16 +48,12 @@ class SigmaTabBar: UIView {
     
     func selectTab(_ idx: Int) {
         for tab in tabViews {
-            tab.imageView.tintColor = UIColor.darkGray
-            tab.nameLabel.textColor = UIColor.darkGray
-//            tab.imageView.tintColor = UIColor.accentGrayColor()
-//            tab.nameLabel.textColor = UIColor.accentGrayColor()
+            tab.imageView.tintColor = UIColor.fadedDarkGray
+            tab.nameLabel.textColor = UIColor.fadedDarkGray
         }
         
-        tabViews[idx].imageView.tintColor = UIColor.black
-        tabViews[idx].nameLabel.textColor = UIColor.black
-//        tabViews[idx].imageView.tintColor = UIColor.accentDarkColor()
-//        tabViews[idx].nameLabel.textColor = UIColor.accentDarkColor()
+        tabViews[idx].imageView.tintColor = UIColor.darkGray
+        tabViews[idx].nameLabel.textColor = UIColor.darkGray
         
         selectedTab = idx
         delegate?.updatedSelectedTab(idx)

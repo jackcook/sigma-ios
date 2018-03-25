@@ -45,7 +45,7 @@ class ProfileView: UIView, UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let transaction = user?.transactions[indexPath.row], let user = user else {
+        guard let transaction = user?.transactions.reversed()[indexPath.row], let user = user else {
             return UITableViewCell()
         }
         

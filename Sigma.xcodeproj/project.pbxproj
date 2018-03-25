@@ -39,6 +39,7 @@
 		EB90CCA32067537A00A0BFE9 /* TransactionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB90CCA22067537A00A0BFE9 /* TransactionCell.swift */; };
 		EB90CCA52067538100A0BFE9 /* TransactionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EB90CCA42067538100A0BFE9 /* TransactionCell.xib */; };
 		EB90CCA72067C4EA00A0BFE9 /* RewardRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB90CCA62067C4EA00A0BFE9 /* RewardRequest.swift */; };
+		EB90CCAA2067D2F300A0BFE9 /* UIColor+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB90CCA92067D2F300A0BFE9 /* UIColor+Extensions.swift */; };
 		EBCA9AB5206616E500896BBA /* SigmaUserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBCA9AB4206616E500896BBA /* SigmaUserDefaults.swift */; };
 		EBCA9AB72066246800896BBA /* SigmaUserDefaultsKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBCA9AB62066246800896BBA /* SigmaUserDefaultsKey.swift */; };
 		EBCA9AB9206628A300896BBA /* UserTypeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBCA9AB8206628A300896BBA /* UserTypeViewController.swift */; };
@@ -80,6 +81,7 @@
 		EB90CCA22067537A00A0BFE9 /* TransactionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionCell.swift; sourceTree = "<group>"; };
 		EB90CCA42067538100A0BFE9 /* TransactionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TransactionCell.xib; sourceTree = "<group>"; };
 		EB90CCA62067C4EA00A0BFE9 /* RewardRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RewardRequest.swift; sourceTree = "<group>"; };
+		EB90CCA92067D2F300A0BFE9 /* UIColor+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extensions.swift"; sourceTree = "<group>"; };
 		EBCA9AB4206616E500896BBA /* SigmaUserDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SigmaUserDefaults.swift; sourceTree = "<group>"; };
 		EBCA9AB62066246800896BBA /* SigmaUserDefaultsKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SigmaUserDefaultsKey.swift; sourceTree = "<group>"; };
 		EBCA9AB8206628A300896BBA /* UserTypeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTypeViewController.swift; sourceTree = "<group>"; };
@@ -185,6 +187,7 @@
 		EB90CC852066AFE300A0BFE9 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				EB90CCA82067D2E700A0BFE9 /* Extensions */,
 				EB90CC882066B2F900A0BFE9 /* Networking */,
 				EB90CC872066B2F200A0BFE9 /* Settings */,
 			);
@@ -232,6 +235,14 @@
 				EB90CC922066B8F900A0BFE9 /* User.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		EB90CCA82067D2E700A0BFE9 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				EB90CCA92067D2F300A0BFE9 /* UIColor+Extensions.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -373,6 +384,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EB90CC9F20670AB300A0BFE9 /* PlaceViewController.swift in Sources */,
+				EB90CCAA2067D2F300A0BFE9 /* UIColor+Extensions.swift in Sources */,
 				EB3FAA9020660A2C006033FF /* SigmaTabView.swift in Sources */,
 				EB3FAA9220660A6B006033FF /* SigmaTabBar.swift in Sources */,
 				D171586C2067C60B0093B611 /* ShelterInfoCell.swift in Sources */,

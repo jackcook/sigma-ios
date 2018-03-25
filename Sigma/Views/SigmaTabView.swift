@@ -23,13 +23,11 @@ class SigmaTabView: UIView {
         nameLabel = UILabel()
         nameLabel.font = UIFont.systemFont(ofSize: 12, weight: .medium)
         nameLabel.text = tab.name
-//        nameLabel.textColor = UIColor.accentDarkColor()
-        nameLabel.textColor = UIColor.black
+        nameLabel.textColor = UIColor.darkGray
         
         imageView = UIImageView(image: tab.image)
         imageView.image = tab.image.withRenderingMode(.alwaysTemplate)
-//        imageView.tintColor = UIColor.accentDarkColor()
-        imageView.tintColor = UIColor.black
+        imageView.tintColor = UIColor.darkGray
     }
     
     required init?(coder aDecoder: NSCoder) {

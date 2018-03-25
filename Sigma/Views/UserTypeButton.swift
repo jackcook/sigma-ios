@@ -19,18 +19,18 @@ class UserTypeButton: UIButton {
             layer.cornerRadius = 4
             
             if type == .person {
-                backgroundColor = UIColor.black
+                backgroundColor = UIColor.darkGray
                 setTitleColor(.white, for: .normal)
             } else if type == .shelter {
                 backgroundColor = UIColor.white
-                layer.borderColor = UIColor.black.cgColor
+                layer.borderColor = UIColor.darkGray.cgColor
                 layer.borderWidth = 2
                 setTitleColor(.black, for: .normal)
             } else if type == .scan {
-                backgroundColor = UIColor(red: 52/255, green: 152/255, blue: 219/255, alpha: 1)
+                backgroundColor = UIColor.green
                 setTitleColor(.white, for: .normal)
             } else if type == .confirm {
-                backgroundColor = UIColor(red: 46/255, green: 204/255, blue: 113/255, alpha: 1)
+                backgroundColor = UIColor.blue
                 setTitleColor(.white, for: .normal)
             }
         }
