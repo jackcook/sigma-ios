@@ -34,4 +34,8 @@ class PersonViewController: UIViewController {
         topBar.layer.shadowOpacity = 0.15
         topBar.layer.shadowPath = topShadowPath.cgPath
     }
+    
+    @IBAction func backButton(_ sender: UIButton) {
+        navigationController?.popViewController(animated: true)
+    }
 }

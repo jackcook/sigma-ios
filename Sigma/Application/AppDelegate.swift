@@ -23,10 +23,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         if SigmaUserDefaults.bool(forKey: .isShelterVolunteer) {
             let controller = storyboard.instantiateViewController(withIdentifier: "ShelterViewController")
-            window?.rootViewController = controller
+            let navigationController = UINavigationController(rootViewController: controller)
+            navigationController.isNavigationBarHidden = true
+            window?.rootViewController = navigationController
         } else if SigmaUserDefaults.string(forKey: .userIdentifier) != nil {
             let controller = storyboard.instantiateViewController(withIdentifier: "UserViewController")
-            window?.rootViewController = controller
+            let navigationController = UINavigationController(rootViewController: controller)
+            navigationController.isNavigationBarHidden = true
+            window?.rootViewController = navigationController
         }
         
         return true

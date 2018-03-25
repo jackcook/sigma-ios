@@ -38,6 +38,7 @@
 		EB90CCA12067469A00A0BFE9 /* PersonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB90CCA02067469A00A0BFE9 /* PersonViewController.swift */; };
 		EB90CCA32067537A00A0BFE9 /* TransactionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB90CCA22067537A00A0BFE9 /* TransactionCell.swift */; };
 		EB90CCA52067538100A0BFE9 /* TransactionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EB90CCA42067538100A0BFE9 /* TransactionCell.xib */; };
+		EB90CCA72067C4EA00A0BFE9 /* RewardRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB90CCA62067C4EA00A0BFE9 /* RewardRequest.swift */; };
 		EBCA9AB5206616E500896BBA /* SigmaUserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBCA9AB4206616E500896BBA /* SigmaUserDefaults.swift */; };
 		EBCA9AB72066246800896BBA /* SigmaUserDefaultsKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBCA9AB62066246800896BBA /* SigmaUserDefaultsKey.swift */; };
 		EBCA9AB9206628A300896BBA /* UserTypeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBCA9AB8206628A300896BBA /* UserTypeViewController.swift */; };
@@ -78,6 +79,7 @@
 		EB90CCA02067469A00A0BFE9 /* PersonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonViewController.swift; sourceTree = "<group>"; };
 		EB90CCA22067537A00A0BFE9 /* TransactionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionCell.swift; sourceTree = "<group>"; };
 		EB90CCA42067538100A0BFE9 /* TransactionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TransactionCell.xib; sourceTree = "<group>"; };
+		EB90CCA62067C4EA00A0BFE9 /* RewardRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RewardRequest.swift; sourceTree = "<group>"; };
 		EBCA9AB4206616E500896BBA /* SigmaUserDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SigmaUserDefaults.swift; sourceTree = "<group>"; };
 		EBCA9AB62066246800896BBA /* SigmaUserDefaultsKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SigmaUserDefaultsKey.swift; sourceTree = "<group>"; };
 		EBCA9AB8206628A300896BBA /* UserTypeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTypeViewController.swift; sourceTree = "<group>"; };
@@ -216,6 +218,7 @@
 				EB90CC8B2066B45C00A0BFE9 /* SheltersRequest.swift */,
 				EB90CC902066B85600A0BFE9 /* CreateUserRequest.swift */,
 				EB90CC9A2066FA5600A0BFE9 /* PaymentRequest.swift */,
+				EB90CCA62067C4EA00A0BFE9 /* RewardRequest.swift */,
 				EB90CC9C2066FBC000A0BFE9 /* UserRequest.swift */,
 			);
 			path = Networking;
@@ -391,6 +394,7 @@
 				EBCA9AB9206628A300896BBA /* UserTypeViewController.swift in Sources */,
 				EB90CCA12067469A00A0BFE9 /* PersonViewController.swift in Sources */,
 				EB90CC932066B8F900A0BFE9 /* User.swift in Sources */,
+				EB90CCA72067C4EA00A0BFE9 /* RewardRequest.swift in Sources */,
 				EB90CCA32067537A00A0BFE9 /* TransactionCell.swift in Sources */,
 				EB90CC912066B85600A0BFE9 /* CreateUserRequest.swift in Sources */,
 				EB90CC8A2066B30400A0BFE9 /* SigmaRequest.swift in Sources */,

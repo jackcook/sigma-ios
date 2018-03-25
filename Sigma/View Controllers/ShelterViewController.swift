@@ -9,13 +9,47 @@
 import EFQRCode
 import UIKit
 
+struct Consumable {
+    var name: String
+    var cost: Int
+}
+
+struct Task {
+    var name: String
+    var value: Int
+}
+
 class ShelterViewController: UIViewController, SigmaTabBarDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITableViewDataSource, UITableViewDelegate {
     
     @IBOutlet weak var topBar: UIView!
     @IBOutlet weak var contentTableView: UITableView!
     @IBOutlet weak var bottomBar: SigmaTabBar!
     
+    private var selectedTab = 0
+    
+    private var consumableToSend: Consumable?
+    private var taskToSend: Task?
     private var userToDisplay: User?
+    
+    private let consumables = [
+        Consumable(name: "1 meal", cost: 5),
+        Consumable(name: "½ gallon of water", cost: 5),
+        Consumable(name: "1 gallon of gas", cost: 10),
+        Consumable(name: "10 minute shower", cost: 3),
+        Consumable(name: "Blanket", cost: 5)
+    ]
+    
+    private let tasks = [
+        Task(name: "Check in", value: 10),
+        Task(name: "Clear debris from the road", value: 10),
+        Task(name: "Recycle 5 bottles", value: 1),
+        Task(name: "Help distribute goods", value: 3),
+        Task(name: "Clean the shelter", value: 3),
+        Task(name: "Help find trapped people", value: 10),
+        Task(name: "Help rebuild houses", value: 10),
+        Task(name: "Babysit children in the shelter", value: 5),
+        Task(name: "Cook meals for the shelter", value: 5)
+    ]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,8 +57,8 @@ class ShelterViewController: UIViewController, SigmaTabBarDelegate, UIImagePicke
         bottomBar.delegate = self
         
         let tabs = [
-            SigmaTab(name: "Receive", image: #imageLiteral(resourceName: "Globe")),
-            SigmaTab(name: "Pay Out", image: #imageLiteral(resourceName: "User"))
+            SigmaTab(name: "Items", image: #imageLiteral(resourceName: "Water")),
+            SigmaTab(name: "Tasks", image: #imageLiteral(resourceName: "Clipboard"))
         ]
         
         bottomBar.updateTabs(tabs)
@@ -63,6 +97,16 @@ class ShelterViewController: UIViewController, SigmaTabBarDelegate, UIImagePicke
             }
             
             profileController.user = user
+        case "transactionSegue":
+            guard let transactionController = segue.destination as? TransactionViewController else {
+                return
+            }
+            
+            if selectedTab == 0 {
+                transactionController.consumable = consumableToSend
+            } else {
+                transactionController.task = taskToSend
+            }
         default:
             break
         }
@@ -79,6 +123,7 @@ class ShelterViewController: UIViewController, SigmaTabBarDelegate, UIImagePicke
     // MARK: Sigma Tab Bar Delegate
     
     func updatedSelectedTab(_ index: Int) {
+        selectedTab = index
         contentTableView.reloadData()
     }
     
@@ -111,19 +156,30 @@ class ShelterViewController: UIViewController, SigmaTabBarDelegate, UIImagePicke
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "ItemCell", for: indexPath) as? ItemCell else {
             return UITableViewCell()
         }
-        
-        cell.configure(name: "Recycle", cost: 4)
+
+        if selectedTab == 0 {
+            cell.configure(name: consumables[indexPath.row].name, cost: consumables[indexPath.row].cost)
+        } else {
+            cell.configure(name: tasks[indexPath.row].name, cost: tasks[indexPath.row].value)
+        }
+
         return cell
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 2
+        return selectedTab == 0 ? consumables.count : tasks.count
     }
     
     // MARK: UITableViewDelegate
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+        
+        if selectedTab == 0 {
+            consumableToSend = consumables[indexPath.row]
+        } else {
+            taskToSend = tasks[indexPath.row]
+        }
         
         performSegue(withIdentifier: "transactionSegue", sender: self)
     }
