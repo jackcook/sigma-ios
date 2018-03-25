@@ -8,20 +8,27 @@
 
 import UIKit
 
-class PersonViewController: UIViewController {
+class PersonViewController: UIViewController, ProfileViewDelegate {
     
     @IBOutlet weak var topBar: UIView!
-    @IBOutlet weak var nameLabel: UILabel!
-    @IBOutlet weak var balanceLabel: UILabel!
-    @IBOutlet weak var transactionsTableView: UITableView!
+    @IBOutlet weak var contentView: UIView!
     
     var user: User!
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    private var profileView: ProfileView?
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         
-        nameLabel.text = user.name
-        balanceLabel.text = "Balance: \(user.balance)σ"
+        guard let profileView = Bundle.main.loadNibNamed("ProfileView", owner: self, options: nil)?.first as? ProfileView else {
+            return
+        }
+        
+        contentView.addSubview(profileView)
+        profileView.delegate = self
+        profileView.frame = contentView.bounds
+        profileView.user = user
+        self.profileView = profileView
     }
     
     override func viewDidLayoutSubviews() {
@@ -37,5 +44,20 @@ class PersonViewController: UIViewController {
     
     @IBAction func backButton(_ sender: UIButton) {
         navigationController?.popViewController(animated: true)
+    }
+    
+    // MARK: ProfileViewDelegate Methods
+    
+    func needsProfileUpdate(completion: @escaping (User?) -> Void) {
+        UserRequest(id: user.id).start { user in
+            guard let user = user else {
+                return
+            }
+            
+            self.user = user
+            self.profileView?.user = user
+            
+            completion(user)
+        }
     }
 }

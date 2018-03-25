@@ -13,7 +13,7 @@ class ProfileInfoCell: UITableViewCell {
     
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var balanceLabel: UILabel!
-    @IBOutlet weak var codeImageView: UIImageView!
+    @IBOutlet weak var codeImageView: UIImageView?
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -23,7 +23,7 @@ class ProfileInfoCell: UITableViewCell {
         }
         
         if let image = EFQRCode.generate(content: address) {
-            codeImageView.image = UIImage(cgImage: image)
+            codeImageView?.image = UIImage(cgImage: image)
         }
     }
     

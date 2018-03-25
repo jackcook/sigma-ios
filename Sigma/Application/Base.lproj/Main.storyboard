@@ -613,48 +613,30 @@ Public High School
                                     <constraint firstItem="j3V-qZ-Vfy" firstAttribute="top" secondItem="MdI-W4-YRg" secondAttribute="top" constant="20" id="kww-np-ja7"/>
                                 </constraints>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Jack Cook" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d25-Uu-wGg">
-                                <rect key="frame" x="125" y="92" width="124.5" height="32"/>
-                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="26"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Balance: 10σ" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L8C-WY-mVz">
-                                <rect key="frame" x="137" y="134" width="101" height="21"/>
-                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="6GC-Hq-I3K">
-                                <rect key="frame" x="0.0" y="179" width="375" height="488"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ysd-lh-og7">
+                                <rect key="frame" x="0.0" y="68" width="375" height="599"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            </tableView>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="6GC-Hq-I3K" firstAttribute="top" secondItem="L8C-WY-mVz" secondAttribute="bottom" constant="24" id="51J-Jh-ARI"/>
-                            <constraint firstItem="d25-Uu-wGg" firstAttribute="top" secondItem="MdI-W4-YRg" secondAttribute="bottom" constant="24" id="7KW-i6-Xyv"/>
                             <constraint firstItem="MdI-W4-YRg" firstAttribute="leading" secondItem="CDS-Fn-LAO" secondAttribute="leading" id="92B-X6-bHh"/>
-                            <constraint firstItem="l80-LJ-C0P" firstAttribute="top" secondItem="6GC-Hq-I3K" secondAttribute="bottom" id="AVn-Uy-wnn"/>
+                            <constraint firstItem="l80-LJ-C0P" firstAttribute="top" secondItem="ysd-lh-og7" secondAttribute="bottom" id="CyR-fH-Lw8"/>
                             <constraint firstAttribute="trailing" secondItem="MdI-W4-YRg" secondAttribute="trailing" id="E7S-xJ-u3V"/>
-                            <constraint firstItem="6GC-Hq-I3K" firstAttribute="leading" secondItem="CDS-Fn-LAO" secondAttribute="leading" id="LLM-hG-JBm"/>
-                            <constraint firstItem="L8C-WY-mVz" firstAttribute="top" secondItem="d25-Uu-wGg" secondAttribute="bottom" constant="10" id="Vz0-qV-Peu"/>
-                            <constraint firstAttribute="trailing" secondItem="6GC-Hq-I3K" secondAttribute="trailing" id="cmJ-9o-9w5"/>
-                            <constraint firstItem="L8C-WY-mVz" firstAttribute="centerX" secondItem="CDS-Fn-LAO" secondAttribute="centerX" id="oH1-sm-6VF"/>
-                            <constraint firstItem="d25-Uu-wGg" firstAttribute="centerX" secondItem="CDS-Fn-LAO" secondAttribute="centerX" id="oQ5-LN-kGS"/>
+                            <constraint firstItem="ysd-lh-og7" firstAttribute="top" secondItem="MdI-W4-YRg" secondAttribute="bottom" id="OBr-fB-cqB"/>
+                            <constraint firstItem="ysd-lh-og7" firstAttribute="leading" secondItem="CDS-Fn-LAO" secondAttribute="leading" id="VuC-Q7-rb6"/>
+                            <constraint firstAttribute="trailing" secondItem="ysd-lh-og7" secondAttribute="trailing" id="oYH-Ap-xWp"/>
                             <constraint firstItem="MdI-W4-YRg" firstAttribute="top" secondItem="CDS-Fn-LAO" secondAttribute="top" id="qXn-P9-CyC"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="balanceLabel" destination="L8C-WY-mVz" id="cj1-04-dcL"/>
-                        <outlet property="nameLabel" destination="d25-Uu-wGg" id="ghJ-Xb-w6B"/>
+                        <outlet property="contentView" destination="ysd-lh-og7" id="5X1-tI-Z3v"/>
                         <outlet property="topBar" destination="MdI-W4-YRg" id="Adh-oi-1EQ"/>
-                        <outlet property="transactionsTableView" destination="6GC-Hq-I3K" id="fab-yN-hx7"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sNQ-r7-iJq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1729" y="1248"/>
+            <point key="canvasLocation" x="862" y="1322"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Aye-1A-zYq">

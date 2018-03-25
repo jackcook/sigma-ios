@@ -32,8 +32,13 @@ class ProfileView: UIView, UITableViewDataSource, UITableViewDelegate {
         
         transactionsTableView.dataSource = self
         
-        let nib = UINib(nibName: "ProfileInfoCell", bundle: nil)
-        transactionsTableView.register(nib, forCellReuseIdentifier: "ProfileInfoCell")
+        if SigmaUserDefaults.string(forKey: .userIdentifier) != nil {
+            let nib = UINib(nibName: "ProfileInfoCell", bundle: nil)
+            transactionsTableView.register(nib, forCellReuseIdentifier: "ProfileInfoCell")
+        } else {
+            let nib = UINib(nibName: "OtherProfileInfoCell", bundle: nil)
+            transactionsTableView.register(nib, forCellReuseIdentifier: "ProfileInfoCell")
+        }
         
         refreshControl.addTarget(self, action: #selector(refreshProfileData), for: .valueChanged)
         transactionsTableView.addSubview(refreshControl)
