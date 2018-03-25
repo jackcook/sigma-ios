@@ -11,6 +11,7 @@ import UIKit
 private struct Section {
     var title: String
     var description: String
+    var image: UIImage
 }
 
 class UpdatesView: UIView, UITableViewDataSource, UITableViewDelegate {
@@ -18,10 +19,11 @@ class UpdatesView: UIView, UITableViewDataSource, UITableViewDelegate {
     @IBOutlet weak var updatesTableView: UITableView!
     
     private let dataSource = [
-        Section(title: "September 12, 2017 7:30 am\nPark Vista Community High School\nPublic High School\n7900 Jog Rd, Lake Worth, FL 33467\n(561) 491-8400", description:"Task: Clear trees from the road (1 hour)\nReward: 10σ"),
-        Section(title: "September 12, 2017 7:40 am\nPark Vista Community High School\nPublic High School\n7900 Jog Rd, Lake Worth, FL 33467\n(561) 491-8400", description: "Task: Help find trapped people (1 hour)\nReward: 10σ"),
-        Section(title: "September 13, 2017 9:40 am\nPalm Beach Central High School\n8499 Forest Hill Blvd, Wellington, FL 33411\n(561) 304-1000", description: "Task: Babysit children in the shelter (1 hour)\nReward: 5σ"),
-        Section(title: "September 14, 2017 7:40 am\nPark Vista Community High School\nPublic High School\n7900 Jog Rd, Lake Worth, FL 33467\n(561) 491-8400", description: "Task: Help rebuild houses (1 hour)\nReward: 10σ")
+        Section(title: "Flood Warning!", description: "Flooding central and norlthern Florida: Alachua, Bay, Brevard, Citrus, Columbia, Dixie, Flagler, Franklin, Gilchrist, Gulf, Hamilton, Hernando, Jefferson, Lafayette, Lake, Leon, Levy, Madison, Marion, Orange, Osceola, Polk, Seminole, Sumter, Suwannee, Taylor, Volusia, and Wakulla counties.", image: #imageLiteral(resourceName: "Image")),
+        Section(title: "Park Vista Community High School", description:"Public High School\n7900 Jog Rd, Lake Worth, FL 33467\n(561) 491-8400\nTask: Clear trees from the road (1 hour)\nReward: 10σ", image: #imageLiteral(resourceName: "Park Vista HS")),
+        Section(title: "Park Vista Community High School", description: "Public High School\n7900 Jog Rd, Lake Worth, FL 33467\n(561) 491-8400\nTask: Help find trapped people (1 hour)\nReward: 10σ", image: #imageLiteral(resourceName: "Park Vista HS")),
+        Section(title: "Palm Beach Central High School", description: "8499 Forest Hill Blvd, Wellington, FL 33411\n(561) 304-1000\nTask: Babysit children in the shelter (1 hour)\nReward: 5σ", image: #imageLiteral(resourceName: "PalmBeachCentralHS")),
+        Section(title: "Park Vista Community High School", description: "Public High School\n7900 Jog Rd, Lake Worth, FL 33467\n(561) 491-8400\nTask: Help rebuild houses (1 hour)\nReward: 10σ", image: #imageLiteral(resourceName: "Park Vista HS"))
     ]
     
     // MARK: View Lifecycle
@@ -45,9 +47,10 @@ class UpdatesView: UIView, UITableViewDataSource, UITableViewDelegate {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "UpdateCell", for: indexPath) as? UpdateCell else {
             return UITableViewCell()
         }
-            
+        
         cell.titleLabel.text = dataSource[indexPath.row].title
         cell.descriptionLabel.text = dataSource[indexPath.row].description
+        cell.thumbnailImageView.image = dataSource[indexPath.row].image
             
         return cell
     }
