@@ -64,6 +64,8 @@ class UserViewController: UIViewController, MapViewDelegate, ProfileViewDelegate
         mapView.delegate = self
         mapView.frame = contentView.bounds
         self.mapView = mapView
+        
+        contentView.bringSubview(toFront: updatesView)
     }
     
     override func viewDidLayoutSubviews() {
