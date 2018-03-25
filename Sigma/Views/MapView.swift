@@ -9,19 +9,17 @@
 import MapKit
 import SwiftyJSON
 import UIKit
-import CoreLocation
 
 protocol MapViewDelegate {
     func shouldDisplayInformation(for shelter: Shelter)
 }
 
-class MapView: UIView, CLLocationManagerDelegate, MKMapViewDelegate {
+class MapView: UIView, MKMapViewDelegate {
     
     @IBOutlet weak var mapView: MKMapView!
     
     var delegate: MapViewDelegate?
     
-    private var locationManager: CLLocationManager!
     private var shelters = [Shelter]()
     
     override func awakeFromNib() {
@@ -46,32 +44,10 @@ class MapView: UIView, CLLocationManagerDelegate, MKMapViewDelegate {
                 self.mapView.addAnnotation(pin)
             }
         }
-        
-        locationManager = CLLocationManager()
-        locationManager.requestWhenInUseAuthorization()
-        
-        if CLLocationManager.locationServicesEnabled(){
-            locationManager.delegate = self
-            locationManager.startUpdatingLocation()
-        } else{
-            return
-        }
     }
     
     func configure(shelters: [Shelter]) {
         self.shelters = shelters
-    }
-    
-    // MARK: CLLocationManagerDelegate Methods
-    
-    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        let location = locations[0]
-        let center = location.coordinate
-        let span = MKCoordinateSpanMake(0.03, 0.03)
-        let region = MKCoordinateRegionMake(center, span)
-        
-        mapView.setRegion(region, animated: true)
-        mapView.showsUserLocation = true
     }
     
     // MARK: MKMapViewDelegate Methods
